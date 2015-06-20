@@ -1,0 +1,12 @@
+th\co\geniustree\dental\angular\service\MyUserDetailService.class
+th\co\geniustree\dental\angular\repo\CustomerRepo.class
+th\co\geniustree\dental\angular\controller\CustomerController.class
+th\co\geniustree\dental\angular\App.class
+th\co\geniustree\dental\angular\controller\ValidationErrorMessage.class
+th\co\geniustree\dental\angular\model\User.class
+th\co\geniustree\dental\angular\model\Customer.class
+th\co\geniustree\dental\angular\repo\UserRepo.class
+th\co\geniustree\dental\angular\config\SecurityConfig.class
+th\co\geniustree\dental\angular\config\BeanValidatorConfig.class
+th\co\geniustree\dental\angular\controller\ValidationExceptionHandler.class
+th\co\geniustree\dental\angular\config\WebConfig.class
