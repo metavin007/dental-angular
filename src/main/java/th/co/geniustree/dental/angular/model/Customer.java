@@ -28,12 +28,12 @@ public class Customer implements Serializable{
     @SequenceGenerator(name = "Customer",sequenceName = "CUSTOMER_SEQ",allocationSize = 1)
     @GeneratedValue(generator = "Customer",strategy = GenerationType.SEQUENCE)
     private BigInteger id;
-    @NotBlank
+    @NotBlank(message = "name is not empty")
     private String name;
-    @Email
-    @NotBlank
+    @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
+    @NotBlank(message = "email is not empty")
     private String email;
-    @NotBlank
+    @NotBlank(message = "mobile is not empty")
     private String mobile;
 
     public BigInteger getId() {
