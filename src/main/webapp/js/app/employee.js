@@ -3,7 +3,7 @@
 angular.module('employee', []);
 angular.module('employee')
         .controller('EmployeeController', function ($scope, $http) {
-
+            $scope.keyword = null;
             $scope.employees = {};
             $scope.employee = {};
             $scope.error = {};
@@ -33,6 +33,14 @@ angular.module('employee')
                     load();
                 }).error(function (data, status, header, config) {
 
+                });
+            };
+            $scope.searchUser = function() {
+                if(!$scope.keyword) {
+                    load();
+                }
+                $http.post('/users/search', $scope.keyword).success(function(data) {
+                    $scope.employees = data;
                 });
             };
         });

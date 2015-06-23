@@ -35,8 +35,8 @@ INSERT INTO AUTHORITY(ROLES) values('delect');
 -- nation,race,addressofpid,address,mobile,startwork,endwork,workstatus) values(user_SEQ.nextVal,'x3','x3','x3','x3','x3','x3','x3'
 -- ,'x3','x3','x3','x3','x3','x3','x3','x3','x3','x3','x3','x3')
 
-INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','o@o.com','012345','jasin1', 'Thai','Thai','Aangkok','098767878',TRUE);
-INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'44545','b@b.com','234566','aasin2', 'Thai','Thai','Cangkok2','0983347878',TRUE);
-INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'66545','c@c.com','334567','basin3', 'Thai','Thai','Dangkok3','09866788',TRUE);
-INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'77545','d@d.com','999999','casin4', 'Thai','Thai','Eangkok4','098777878',TRUE);
-INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'77345','e@e.com','456789','dasin5', 'Thai','Thai','Fangkok5','098127878',TRUE);
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','o@o.com','012345','jasin1', 'Thai','Thai','Aangkok','098767878',TRUE);
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'44545','b@b.com','234566','aasin2', 'Thai','Thai','Cangkok2','0983347878',TRUE);
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'66545','c@c.com','334567','basin3', 'Thai','Thai','Dangkok3','09866788',TRUE);
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'77545','d@d.com','999999','casin4', 'Thai','Thai','Eangkok4','098777878',TRUE);
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'77345','e@e.com','456789','dasin5', 'Thai','Thai','Fangkok5','098127878',TRUE);

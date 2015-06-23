@@ -40,4 +40,8 @@ public class UserController {
     public void deleteUser(@RequestBody User user) {
         userRepo.delete(user);
     }
+    @RequestMapping(value = "/users/search", method = RequestMethod.POST)
+    public Page<User> searchUser(@RequestBody String keyword, Pageable pageable) {
+        return userRepo.findByNameTHOrEmail(keyword, keyword, pageable);
+    }
 }
