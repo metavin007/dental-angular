@@ -34,3 +34,9 @@ INSERT INTO AUTHORITY(ROLES) values('delect');
 -- INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nameENG,birthday,sex,blood,soldierstatus,marrystatus,
 -- nation,race,addressofpid,address,mobile,startwork,endwork,workstatus) values(user_SEQ.nextVal,'x3','x3','x3','x3','x3','x3','x3'
 -- ,'x3','x3','x3','x3','x3','x3','x3','x3','x3','x3','x3','x3')
+
+INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','o@o.com','012345','แดง', 'Thai','Thai','Aangkok','098767878',TRUE);
+INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','b@b.com','234566','ดำ', 'Thai','Thai','Cangkok2','0983347878',TRUE);
+INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','c@c.com','334567','เขียว', 'Thai','Thai','Dangkok3','09866788',TRUE);
+INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','d@d.com','999999','ฟ้า', 'Thai','Thai','Eangkok4','098777878',TRUE);
+INSERT INTO EMLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','e@e.com','456789','น้ำเงิน', 'Thai','Thai','Fangkok5','098127878',TRUE);
