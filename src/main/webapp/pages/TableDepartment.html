@@ -270,7 +270,7 @@
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <input type="text" class="form-control" placeholder="Search..." ng-model="keyword">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button">
                                             <i class="fa fa-search"></i>
@@ -330,17 +330,14 @@
                 <!-- /.row -->
                 <div class="row" ng-controller="departmentController">
                     <div class="col-lg-12">
-
-                       
-
                         <div class="panel panel-default" style="margin-top: 10px;">
                             <div class="panel-heading">
                                 DataTables department
                             </div>
                             <div id="csssert" class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <input type="text" class="form-control" placeholder="Search..." ng-model="keyword">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
+                                    <button class="btn btn-default" type="button" ng-click="searchDepartment()">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>

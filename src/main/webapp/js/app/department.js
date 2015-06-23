@@ -7,6 +7,7 @@ angular.module('department')
             $scope.departments = {};
             $scope.department = {};
             $scope.error = {};
+            $scope.keyword = null;
             load();
             function load () {
                 $http.get('/department',{params:{page:0,size:20,sort:'name,desc'}}).success(function (data) {
@@ -33,6 +34,14 @@ angular.module('department')
                     load();
                 }).error(function (data, status, header, config) {
 
+                });
+            };
+            $scope.searchDepartment = function() {
+                if (!$scope.keyword) {
+                    load();
+                }
+                $http.post('/department/search', $scope.keyword).success(function(data){
+                    $scope.departments = data;
                 });
             };
         });

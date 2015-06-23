@@ -22,20 +22,27 @@ import th.co.geniustree.dental.angular.repo.DepartmentRepo;
  */
 @RestController
 public class DepartmentController {
-    
+
     @Autowired
     private DepartmentRepo departmentRepo;
-    
+
     @RequestMapping(value = "/department")
-    public Page<Department> getDepartments(Pageable pageable){
+    public Page<Department> getDepartments(Pageable pageable) {
         return departmentRepo.findAll(pageable);
     }
-    @RequestMapping(value = "/department",method = RequestMethod.POST)
-    public void saveDepartment(@Validated @RequestBody Department department){
+
+    @RequestMapping(value = "/department", method = RequestMethod.POST)
+    public void saveDepartment(@Validated @RequestBody Department department) {
         departmentRepo.save(department);
     }
-    @RequestMapping(value = "/departmentdelete",method = RequestMethod.POST)
-    public void deleteDepartment(@RequestBody Department department){
+
+    @RequestMapping(value = "/departmentdelete", method = RequestMethod.POST)
+    public void deleteDepartment(@RequestBody Department department) {
         departmentRepo.delete(department.getId());
+    }
+
+    @RequestMapping(value = "/department/search", method = RequestMethod.POST)
+    public Page<Department> searchDepartment(@RequestBody String keyword, Pageable pageable) {
+        return departmentRepo.findByName(keyword, pageable);
     }
 }
