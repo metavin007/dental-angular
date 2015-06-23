@@ -45,15 +45,7 @@ public class DepartmentController {
 
     @RequestMapping(value = "/department/search", method = RequestMethod.POST)
     public Page<Department> searchDepartment(@RequestBody String keyword, Pageable pageable) {
-        
-        if(keyword.equals("s"))
-        {
-           return departmentRepo.findAll(pageable);
-        }
-        else{
            return departmentRepo.findByName(keyword, pageable);
-        }
-        
     }
     
 }
