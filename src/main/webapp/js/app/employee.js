@@ -28,8 +28,8 @@ angular.module('employee')
                       $scope.error = data;
                 });
             };
-            $scope.delete = function(dep) {
-                $http.post('/usersdelete',dep).success(function (data) {
+            $scope.delete = function(emp) {
+                $http.post('/usersdelete',emp).success(function (data) {
                     load();
                 }).error(function (data, status, header, config) {
 

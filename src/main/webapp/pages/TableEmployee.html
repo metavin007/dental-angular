@@ -357,7 +357,7 @@ and open the template in the editor.
                                         <thead>
                                             <tr>
                                                 <td>ID</td>
-                                                <td>PASSWORD</td>
+                                                
                                                 <td>EMAIL</td>
                                                 <td>PID</td>
                                                 <td>NAMETH</td>
@@ -365,25 +365,25 @@ and open the template in the editor.
                                                 <td>RACE</td>
                                                 <td>ADDRESS</td>
                                                 <td>MOBILE</td>
-                                                <td>ENABLED</td>
+                                               
                                                 <td></td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="odd gradeX" ng-repeat="emp in employees.content">
                                                 <td>{{emp.id}}</td>
-                                                <td>{{emp.password}}</td>
+                                                
                                                 <td>{{emp.email}}</td>
                                                 <td>{{emp.pid}}</td>
-                                                <td>{{emp.nameth}}</td>
+                                                <td>{{emp.nameTH}}</td>
                                                 <td>{{emp.nation}}</td>
                                                 <td>{{emp.race}}</td>
                                                 <td>{{emp.address}}</td>
                                                 <td>{{emp.mobile}}</td>
-                                                <td>{{emp.enabled}}</td>
+                                               
                                                 <td>
                                                     <form method="post">
-                                                        <input type="submit" value="Delete" class="btn btn-danger" ng-click="delete(dep)"> 
+                                                        <input type="submit" value="Delete" class="btn btn-danger" ng-click="delete(emp)"> 
                                                         <!--                                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">-->
                                                     </form>
                                                 </td>
