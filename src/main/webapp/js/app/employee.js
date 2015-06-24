@@ -6,6 +6,11 @@ angular.module('employee')
             $scope.keyword = null;
             $scope.employees = {};
             $scope.employee = {};
+            
+            $scope.addauthority ={};
+            $scope.bankaccount ={};
+            $scope.contactpersion ={};
+            
             $scope.error = {};
             load();
             function load () {
@@ -41,6 +46,28 @@ angular.module('employee')
                 }
                 $http.post('/users/search', $scope.keyword).success(function(data) {
                     $scope.employees = data;
+                });
+            };
+            
+              $scope.saveaddauthority = function() {
+                $http.post('/authoritysave', $scope.addauthority).success(function (data) {
+                    
+                }).error(function (data, status, header, config) {
+                      
+                });
+            };
+             $scope.savebankaccount = function() {
+                $http.post('/bankAccountsave', $scope.bankaccount).success(function (data) {
+                    
+                }).error(function (data, status, header, config) {
+                      
+                });
+            };
+             $scope.savecontactPersion= function() {
+                $http.post('/contactPersionsave', $scope.contactpersion).success(function (data) {
+                    
+                }).error(function (data, status, header, config) {
+                      
                 });
             };
         });
