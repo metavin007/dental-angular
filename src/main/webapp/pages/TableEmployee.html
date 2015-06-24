@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html ng-app="employee">
 
- <head>
+  <head>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -308,11 +308,12 @@ and open the template in the editor.
                                         <a href="TableEmployee.html">ตารางข้อมูลพนักงาน</a>
                                     </li>
                                     <li>
-                                        <a href="TableDepartment.html">ตารางข้อมูลแผนก</a>
+                                        <a href="AddDepartment.html">เพิ่มข้อมูลแผนก</a>
                                     </li>
                                     <li>
-                                        <a href="TableAuthority.html">ตารางข้อมูลสิทธิ</a>
+                                        <a href="TableDepartment.html">ตารางข้อมูลแผนก</a>
                                     </li>
+                  
                                 </ul>
                             </li>
                             <li>
@@ -324,6 +325,9 @@ and open the template in the editor.
                                     <li>
                                         <a href="TableDoctor.html">ตารางข้อมูลหมอ</a>
                                     </li>
+                                    <li>
+                                        <a href="TableCalcurateSalary.html">คำนวนรายได้หมอ</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -334,6 +338,9 @@ and open the template in the editor.
                                     </li>
                                     <li>
                                         <a href="TableDrug.html">ตารางข้อมูลยา</a>
+                                    </li>
+                                    <li>
+                                        <a href="TableStockDrug.html">เช็คสต็อกยา</a>
                                     </li>
                                 </ul>
                             </li>
@@ -375,6 +382,9 @@ and open the template in the editor.
                                 <ul class="nav nav-second-level">
                                     <li>
                                         <a href="AddBill.html">ใบคำนวนค่ารักษา,ค่ายา,ปริ้นใบเสร็จ</a>
+                                    </li>
+                                    <li>
+                                        <a href="AddbillGhost.html">บิลล์ผี</a>
                                     </li>
                                     <li>
                                         <a href="TableBill.html">ตารางข้อมูลการชำระเงิน</a>
@@ -431,10 +441,12 @@ and open the template in the editor.
                                         <thead>
                                             <tr>
                                                 <td>ID</td>
-                                                
                                                 <td>EMAIL</td>
                                                 <td>PID</td>
                                                 <td>NAMETH</td>
+                                                <td>NAMENG</td>
+                                                <td>SEX</td>
+                                                 <td>BLOOD</td>
                                                 <td>NATION</td>
                                                 <td>RACE</td>
                                                 <td>ADDRESS</td>
@@ -445,11 +457,13 @@ and open the template in the editor.
                                         </thead>
                                         <tbody>
                                             <tr class="odd gradeX" ng-repeat="emp in employees.content">
-                                                <td>{{emp.id}}</td>
-                                                
+                                                <td>{{emp.id}}</td> 
                                                 <td>{{emp.email}}</td>
                                                 <td>{{emp.pid}}</td>
                                                 <td>{{emp.nameTH}}</td>
+                                                <td>{{emp.nameENG}}</td>
+                                                <td>{{emp.sex}}</td>
+                                                <td>{{emp.blood}}</td>
                                                 <td>{{emp.nation}}</td>
                                                 <td>{{emp.race}}</td>
                                                 <td>{{emp.address}}</td>

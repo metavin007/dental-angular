@@ -35,8 +35,46 @@ INSERT INTO AUTHORITY(ROLES) values('delect');
 -- nation,race,addressofpid,address,mobile,startwork,endwork,workstatus) values(user_SEQ.nextVal,'x3','x3','x3','x3','x3','x3','x3'
 -- ,'x3','x3','x3','x3','x3','x3','x3','x3','x3','x3','x3','x3')
 
-INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'12345','o@o.com','012345','jasin1', 'Thai','Thai','Aangkok','098767878',TRUE);
-INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'44545','b@b.com','234566','aasin2', 'Thai','Thai','Cangkok2','0983347878',TRUE);
-INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'66545','c@c.com','334567','basin3', 'Thai','Thai','Dangkok3','09866788',TRUE);
-INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'77545','d@d.com','999999','casin4', 'Thai','Thai','Eangkok4','098777878',TRUE);
-INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) values(user_SEQ.nextVal,'77345','e@e.com','456789','dasin5', 'Thai','Thai','Fangkok5','098127878',TRUE);
+-- INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) 
+-- values(user_SEQ.nextVal,'12345','o@o.com','012345','jasin1', 'Thai','Thai','Aangkok','098767878',TRUE);
+-- INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) 
+-- values(user_SEQ.nextVal,'44545','b@b.com','234566','aasin2', 'Thai','Thai','Cangkok2','0983347878',TRUE);
+-- INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) 
+-- values(user_SEQ.nextVal,'66545','c@c.com','334567','basin3', 'Thai','Thai','Dangkok3','09866788',TRUE);
+-- INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) 
+-- values(user_SEQ.nextVal,'77545','d@d.com','999999','casin4', 'Thai','Thai','Eangkok4','098777878',TRUE);
+-- INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nation,race,address,mobile,enabled) 
+-- values(user_SEQ.nextVal,'77345','e@e.com','456789','dasin5', 'Thai','Thai','Fangkok5','098127878',TRUE);
+
+
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
+,sex,blood,soldierstatus,marrystatus,nation,race,address
+,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+values(user_SEQ.nextVal,'11111','aaa@aaa','11111','jasin1','jasin001','M','B','no','marry','thai'
+,'thai','113 moo.1','014289234','0199398765','yes',TRUE,'2011-11-22','2011-11-22','2011-11-22');
+
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
+,sex,blood,soldierstatus,marrystatus,nation,race,address
+,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+values(user_SEQ.nextVal,'22222','bbbb@aaa','22222','jasin1','jasin001','M','B','no','marry','thai'
+,'thai','113 moo.1','024289234','0299398765','yes',TRUE,'2012-11-22','2012-11-22','2012-11-22');
+
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
+,sex,blood,soldierstatus,marrystatus,nation,race,address
+,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+values(user_SEQ.nextVal,'33333','cccc@aaa','33333','jasin1','jasin001','M','B','no','marry','thai'
+,'thai','113 moo.1','034289234','0399398765','yes',TRUE,'2013-11-22','2013-11-22','2013-11-22');
+
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
+,sex,blood,soldierstatus,marrystatus,nation,race,address
+,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+values(user_SEQ.nextVal,'44444','dddd@aaa','44444','jasin1','jasin001','M','B','no','marry','thai'
+,'thai','113 moo.1','044289234','0499398765','yes',TRUE,'2014-11-22','2014-11-22','2014-11-22');
+
+INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
+,sex,blood,soldierstatus,marrystatus,nation,race,address
+,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+values(user_SEQ.nextVal,'55555','eeee@aaa','55555','jasin1','jasin001','M','B','no','marry','thai'
+,'thai','113 moo.1','054289234','0599398765','yes',TRUE,'2015-11-22','2015-11-22','2015-11-22');
+
+
