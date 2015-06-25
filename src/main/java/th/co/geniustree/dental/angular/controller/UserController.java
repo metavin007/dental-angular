@@ -42,6 +42,11 @@ public class UserController {
     public Page<User> getUser(Pageable pageable) {
         return userRepo.findAll(pageable);
     }
+    
+    @RequestMapping(value = "/authoritytest")
+    public Page<Authority> getauthority(Pageable pageable) {
+        return authorityRepo.findAll(pageable);
+    }
 
     @RequestMapping(value = "/userssave", method = RequestMethod.POST)
     public void saveUser(@Validated @RequestBody User user) {

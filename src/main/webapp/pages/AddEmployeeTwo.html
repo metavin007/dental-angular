@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html ng-app="employee">
     <head>
 
         <meta charset="utf-8">
@@ -424,52 +424,45 @@ and open the template in the editor.
                             <div class="panel-heading">
                                 ตารางกรอกข้อมูลพนักงาน
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body" ng-controller="EmployeeController">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <form role="form">
                                             <div class="form-group">
                                                 <h2>ข้อมูลผู้ติดต่อ</h2>
                                                 <label>ชื่อ-สกุล</label>
-                                                <input class="form-control">
+                                                <input class="form-control" ng-model="contactpersion.name">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+                                            <!--                                            <div class="form-group">
+                                                                                            <label>เกี่ยวข้องเป็น</label>
+                                                                                            <select class="form-control">
+                                                                                                <option>พ่อ</option>
+                                                                                                <option>แม่</option>
+                                                                                                <option>พี่น้อง</option>
+                                                                                                <option>ญาติ</option>
+                                                                                                <option>เพื่อน</option>
+                                                                                            </select>
+                                                                                        </div>-->
+                                            <div class="form-group">
+                                                <label>เกี่ยวข้องเป็น</label>
+                                                <input class="form-control" ng-model="contactpersion.relation">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                             <div class="form-group">
-                                                <label>เกี่ยวข้องเป็น</label>
-                                                <select class="form-control">
-                                                    <option>พ่อ</option>
-                                                    <option>แม่</option>
-                                                    <option>พี่น้อง</option>
-                                                    <option>ญาติ</option>
-                                                    <option>เพื่อน</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
                                                 <label>เบอร์โทรศัพท์</label>
-                                                <input class="form-control">
+                                                <input class="form-control" ng-model="contactpersion.telephoneNumber">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                             <h2>ข้อมูลแผนก</h2>
                                             <div class="form-group">
                                                 <label>ชื่อแผนก</label>
-                                                <select class="form-control">
-                                                    <option>พยาบาล</option>
-                                                    <option>พยาบาลผู้ช่วย</option>
-                                                    <option>บัญชี</option>
-                                                    <option>ต้อนรับ</option>
-                                                    <option>ขนส่ง</option>
+                                                <select class="form-control" >
+                                                    <option ng-repeat="dep in departments.content">{{dep.name}}</option>
+                              
                                                 </select>
                                             </div>
-                                            <div class="form-group">
-                                                <label>ชื่อตำแหน่ง</label>
-                                                <select class="form-control">
-                                                    <option>หัวหน้า</option>
-                                                    <option>พนักงานทั่วไป</option>
-                                                    <option>พนักงานพิเศษ</option>
-                                                    <option>คนใช้</option>
-                                                    <option>ทาส</option>
-                                                </select>
-                                            </div>
+
                                         </form>    
 
 
@@ -480,38 +473,48 @@ and open the template in the editor.
                                         <div class="form-group">
                                             <h2>ข้อมูลบัญชีธนาคาร</h2>
                                             <label>เลขบัญชีธนาคาร</label>
-                                            <input class="form-control">
+                                            <input class="form-control" ng-model="bankaccount.addcountid">
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                         <div class="form-group">
                                             <label>ธนาคาร</label>
-                                            <select class="form-control">
-                                                <option>กสิกรไทย</option>
-                                                <option>ไทยพานิชย์</option>
-                                                <option>กรุงเทพ</option>
-                                                <option>กรุงไทย</option>
-                                                <option>ทหารไทย</option>
-                                            </select>
+                                            <input class="form-control" ng-model="bankaccount.bankname">
+                                            <p class="help-block">Example block-level help text here.</p>
                                         </div>
+                                        <!--                                        <div class="form-group">
+                                                                                    <label>ธนาคาร</label>
+                                                                                    <select class="form-control">
+                                                                                        <option>กสิกรไทย</option>
+                                                                                        <option>ไทยพานิชย์</option>
+                                                                                        <option>กรุงเทพ</option>
+                                                                                        <option>กรุงไทย</option>
+                                                                                        <option>ทหารไทย</option>
+                                                                                    </select>
+                                                                                </div>-->
                                         <div class="form-group">
                                             <label>ชื่อบัญชี้</label>
-                                            <input class="form-control">
+                                            <input class="form-control" ng-model="bankaccount.addcountname" >
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                         <div class="form-group">
                                             <label>ประเภทบัญชี</label>
-                                            <select class="form-control">
-                                                <option>ออมทรัพย์</option>
-                                                <option>ไม่ออมทรัพย์</option>
-                                                <option>รักทรัพย์</option>
-                                                <option>รักแร้</option>
-                                                <option>ไม่รักแร้</option>
-                                            </select>
+                                            <input class="form-control" ng-model="bankaccount.addcounttype" >
+                                            <p class="help-block">Example block-level help text here.</p>
                                         </div>
+                                        <!--                                        <div class="form-group">
+                                                                                    <label>ประเภทบัญชี</label>
+                                                                                    <select class="form-control">
+                                                                                        <option>ออมทรัพย์</option>
+                                                                                        <option>ไม่ออมทรัพย์</option>
+                                                                                        <option>รักทรัพย์</option>
+                                                                                        <option>รักแร้</option>
+                                                                                        <option>ไม่รักแร้</option>
+                                                                                    </select>
+                                                                                </div>-->
                                         <h2>สิทธิการใช้งาน</h2>
                                         <div class="form-group">
                                             <label>ระบุสิทธิ์</label>
-                                            <div class="checkbox">
+                                            <div class="checkbox" >
                                                 <label>
                                                     <input type="checkbox" value="">บันทึกข้อมูล
                                                 </label>
@@ -527,47 +530,48 @@ and open the template in the editor.
                                                 </label>
                                             </div>
                                         </div>
-
-
                                     </div>
-                                    <a href="AddEmployeeOne.html"><button type="button" class="btn btn-danger" style="margin-left: 85%;">กลับ</button></a>
-                                    <button type="button" class="btn btn-success" >ต่อไป</button>
-                                    <!-- /.col-lg-6 (nested) -->
+
+
                                 </div>
-                                <!-- /.row (nested) -->
+                                <a href="AddEmployeeOne.html"><button type="button" class="btn btn-danger" style="margin-left: 85%;">กลับ</button></a>
+                                <button type="button" class="btn btn-success" ng-click="savecontactPersion()" ng-click="savebankaccount()" >บันทึก</button>
+                                <!-- /.col-lg-6 (nested) -->
                             </div>
-                            <!-- /.panel-body -->
+                            <!-- /.row (nested) -->
                         </div>
-                        <!-- /.panel -->
+                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.col-lg-12 -->
+                    <!-- /.panel -->
                 </div>
-                <!-- /.row -->
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /#page-wrapper -->
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
 
 
 
 
 
-            <style>
+        <style>
 
 
-            </style>
+        </style>
 
 
-            <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
-            <!-- Bootstrap Core JavaScript -->
-            <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-            <!-- Metis Menu Plugin JavaScript -->
-            <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-            <!-- Custom Theme JavaScript -->
-            <script src="../dist/js/sb-admin-2.js"></script>
-            <script src="../js/angular.min.js"></script>
-            <script src="../js/app/employee.js"></script>
-            <script src="../js/app/department.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
+        <script src="../js/angular.min.js"></script>
+        <script src="../js/app/employee.js"></script>
+        
     </body>
 </html>

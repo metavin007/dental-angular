@@ -33,6 +33,8 @@ public class Department implements Serializable{
     @NotBlank(message = "name is not empty")
     @Size(max = 250)
     private String name;
+    
+    
     @OneToMany(mappedBy = "department")
     private List<User> Users;
 
