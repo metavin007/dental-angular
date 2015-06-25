@@ -42,11 +42,6 @@ public class UserController {
     public Page<User> getUser(Pageable pageable) {
         return userRepo.findAll(pageable);
     }
-    
-    @RequestMapping(value = "/authoritytest")
-    public Page<Authority> getauthority(Pageable pageable) {
-        return authorityRepo.findAll(pageable);
-    }
 
     @RequestMapping(value = "/userssave", method = RequestMethod.POST)
     public void saveUser(@Validated @RequestBody User user) {
@@ -62,16 +57,4 @@ public class UserController {
         return userRepo.findByNameTHOrEmail(keyword, keyword, pageable);
     }
     
-      @RequestMapping(value = "/authoritysave", method = RequestMethod.POST)
-    public void saveAuthority( @RequestBody Authority authority) {
-        authorityRepo.save(authority);
-    }
-      @RequestMapping(value = "/bankAccountsave", method = RequestMethod.POST)
-    public void saveBankAccount( @RequestBody BankAccount bankAccount) {
-        bankAccountRepo.save(bankAccount);
-    }
-      @RequestMapping(value = "/contactPersionsave", method = RequestMethod.POST)
-    public void saveAuthority( @RequestBody ContactPersion contactPersion ) {
-        contactpersionRepo.save(contactPersion);
-    }
 }
