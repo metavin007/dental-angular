@@ -49,32 +49,32 @@ INSERT INTO AUTHORITY(ROLES) values('delect');
 
 INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
 ,sex,blood,soldierstatus,marrystatus,nation,race,address
-,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+,tel,mobile,workstatus,enabled,birthday,addressofpid,startwork,endwork)
 values(user_SEQ.nextVal,'11111','aaa@aaa','11111','jasin1','jasin001','M','B','no','marry','thai'
-,'thai','113 moo.1','014289234','0199398765','yes',TRUE,'2011-11-22','2011-11-22','2011-11-22');
+,'thai','113 moo.1','014289234','0199398765','on work',TRUE,'2011-11-22','122moo.3','2012-11-22','2012-11-22');
 
 INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
 ,sex,blood,soldierstatus,marrystatus,nation,race,address
-,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+,tel,mobile,workstatus,enabled,birthday,addressofpid,startwork,endwork)
 values(user_SEQ.nextVal,'22222','bbbb@aaa','22222','jasin1','jasin001','M','B','no','marry','thai'
-,'thai','113 moo.1','024289234','0299398765','yes',TRUE,'2012-11-22','2012-11-22','2012-11-22');
+,'thai','113 moo.1','024289234','0299398765','on work',TRUE,'2012-11-22','124moo.4','2012-11-22','2012-11-22');
 
 INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
 ,sex,blood,soldierstatus,marrystatus,nation,race,address
-,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+,tel,mobile,workstatus,enabled,birthday,addressofpid,startwork,endwork)
 values(user_SEQ.nextVal,'33333','cccc@aaa','33333','jasin1','jasin001','M','B','no','marry','thai'
-,'thai','113 moo.1','034289234','0399398765','yes',TRUE,'2013-11-22','2013-11-22','2013-11-22');
+,'thai','113 moo.1','034289234','0399398765','on work',TRUE,'2013-11-22','125moo.5','2012-11-22','2012-11-22');
 
 INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
 ,sex,blood,soldierstatus,marrystatus,nation,race,address
-,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+,tel,mobile,workstatus,enabled,birthday,addressofpid,startwork,endwork)
 values(user_SEQ.nextVal,'44444','dddd@aaa','44444','jasin1','jasin001','M','B','no','marry','thai'
-,'thai','113 moo.1','044289234','0499398765','yes',TRUE,'2014-11-22','2014-11-22','2014-11-22');
+,'thai','113 moo.1','044289234','0499398765','on work',TRUE,'2014-11-22','126moo.6','2012-11-22','2012-11-22');
 
 INSERT INTO EMPLOYEE(id,password,email,pid,nameTH,nameENG
 ,sex,blood,soldierstatus,marrystatus,nation,race,address
-,tel,mobile,workstatus,enabled,birthday,startwork,endwork)
+,tel,mobile,workstatus,enabled,birthday,addressofpid,startwork,endwork)
 values(user_SEQ.nextVal,'55555','eeee@aaa','55555','jasin1','jasin001','M','B','no','marry','thai'
-,'thai','113 moo.1','054289234','0599398765','yes',TRUE,'2015-11-22','2015-11-22','2015-11-22');
+,'thai','113 moo.1','054289234','0599398765','on work',TRUE,'2015-11-22','127moo.7','2012-11-22','2012-11-22');
 
 

@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html ng-app="employee">
 
-  <head>
+    <head>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -313,7 +313,7 @@ and open the template in the editor.
                                     <li>
                                         <a href="TableDepartment.html">ตารางข้อมูลแผนก</a>
                                     </li>
-                  
+
                                 </ul>
                             </li>
                             <li>
@@ -446,16 +446,14 @@ and open the template in the editor.
                                                 <td>NAMETH</td>
                                                 <td>NAMENG</td>
                                                 <td>SEX</td>
-                                                 <td>BLOOD</td>
+                                                <td>BLOOD</td>
                                                 <td>NATION</td>
                                                 <td>RACE</td>
-                                                <td>ADDRESS</td>
-                                                <td>MOBILE</td>
-                                               
-                                                <td></td>
-                                            </tr>
+
+                                            </tr>                                           
                                         </thead>
                                         <tbody>
+                                        <thead>
                                             <tr class="odd gradeX" ng-repeat="emp in employees.content">
                                                 <td>{{emp.id}}</td> 
                                                 <td>{{emp.email}}</td>
@@ -466,16 +464,57 @@ and open the template in the editor.
                                                 <td>{{emp.blood}}</td>
                                                 <td>{{emp.nation}}</td>
                                                 <td>{{emp.race}}</td>
-                                                <td>{{emp.address}}</td>
+
+                                        </thead>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover" >
+                                        <thead>
+                                            <tr>
+                                                <td>SOLDIERSTATUS</td>
+                                                <td>MARRYSTATUS</td>
+                                                <td>WORKSTATUS</td>
+                                                <td>STARTWORK</td>
+                                                <td>TEL</td>
+                                                <td>MOBILE</td>
+                                        </thead>
+                                        <tbody>
+                                        <thead>
+                                            <tr class="odd gradeX" ng-repeat="emp in employees.content">
+                                                <td>{{emp.soldierstatus}}</td>
+                                                <td>{{emp.marrystatus}}</td>
+                                                <td>{{emp.workstatus}}</td>
+                                                <td>{{emp.startwork}}</td>
+                                                <td>{{emp.tel}}</td>
                                                 <td>{{emp.mobile}}</td>
-                                               
+                                            </tr>  
+                                        </thead>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="dataTable_wrapper">
+                                    <table class="table table-striped table-bordered table-hover" >
+                                        <thead>
+                                            <tr>
+                                                <td>ADDRESS</td>
+                                                <td>ADDRESSPID</td>
+                                                <td></td>
+                                            </tr>                                           
+                                        </thead>
+                                        <tbody>
+                                        <thead>
+                                            <tr class="odd gradeX" ng-repeat="emp in employees.content">
+                                                <td>{{emp.address}}</td>
+                                                <td>{{emp.addressofpid}}</td>
                                                 <td>
                                                     <form method="post">
                                                         <input type="submit" value="Delete" class="btn btn-danger" ng-click="delete(emp)"> 
-                                                        <!--                                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">-->
+                                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">
                                                     </form>
                                                 </td>
-
+                                        </thead>
                                         </tbody>
                                     </table>
                                 </div>
