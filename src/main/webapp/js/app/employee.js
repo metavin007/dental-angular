@@ -4,10 +4,23 @@ angular.module('employee', []);
 angular.module('employee')
         .controller('EmployeeController', function ($scope, $http) {
             $scope.keyword = null;
+    
             $scope.employees = {};
             $scope.employee = {}; 
             $scope.departments = {};
-           
+            $scope.contactPersion = {};
+            $scope.bankAccount = {};
+            /////////////////////////////////////////////////////////////////////////////////////
+            $scope.saveAll = function () {
+                $http.post('/Allsave', $scope.employee,$scope.departments,$scope.contactPersion,$scope.bankAccount).success(function (data) {
+                    load();
+                    $scope.error = {};
+                }).error(function (data, status, header, config) {
+                    $scope.error = data;
+                });
+            };
+            
+           ///////////////////////////////////////////////////////////////////////////////////////
             $scope.error = {};
             load();
             function load() {

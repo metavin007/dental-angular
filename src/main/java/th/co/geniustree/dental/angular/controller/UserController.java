@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import th.co.geniustree.dental.angular.model.Authority;
 import th.co.geniustree.dental.angular.model.BankAccount;
 import th.co.geniustree.dental.angular.model.ContactPersion;
+import th.co.geniustree.dental.angular.model.Department;
 import th.co.geniustree.dental.angular.model.User;
 import th.co.geniustree.dental.angular.repo.AuthorityRepo;
 import th.co.geniustree.dental.angular.repo.BankAccountRepo;
 import th.co.geniustree.dental.angular.repo.ContactpersionRepo;
+import th.co.geniustree.dental.angular.repo.DepartmentRepo;
 import th.co.geniustree.dental.angular.repo.UserRepo;
 
 /**
@@ -37,6 +39,8 @@ public class UserController {
     private BankAccountRepo bankAccountRepo;
     @Autowired
     private ContactpersionRepo contactpersionRepo;
+    @Autowired
+    private DepartmentRepo departmentRepo;
 
     @RequestMapping(value = "/users")
     public Page<User> getUser(Pageable pageable) {
@@ -55,6 +59,14 @@ public class UserController {
     @RequestMapping(value = "/users/search", method = RequestMethod.POST)
     public Page<User> searchUser(@RequestBody String keyword, Pageable pageable) {
         return userRepo.findByNameTHOrEmail(keyword, keyword, pageable);
+    }
+    
+    @RequestMapping(value = "/Allsave")
+    public void saveAll(@Validated @RequestBody User user,BankAccount bankAccount,ContactPersion contactPersion,Department department){
+       userRepo.save(user);
+       bankAccountRepo.save(bankAccount);
+       contactpersionRepo.save(contactPersion);
+       departmentRepo.save(department);
     }
     
 }
