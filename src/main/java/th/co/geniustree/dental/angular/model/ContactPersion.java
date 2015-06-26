@@ -23,7 +23,7 @@ import javax.persistence.Table;
 public class ContactPersion implements Serializable{
     @Id
     @SequenceGenerator(name = "ContactPersion",sequenceName = "CONTACTPERSION_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "ContactPersion",strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "ContactPersion",strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private String telephoneNumber;

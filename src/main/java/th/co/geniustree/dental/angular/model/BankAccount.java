@@ -15,7 +15,7 @@ public class BankAccount implements Serializable {
 
     @Id
     @SequenceGenerator(name = "BankAccount", sequenceName = "BANKACCOUNT_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "BankAccount", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "BankAccount", strategy = GenerationType.AUTO)
     private Integer id;
     private String addcountid;
     private String addcountname;

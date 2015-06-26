@@ -452,23 +452,23 @@ and open the template in the editor.
                                         <div class="form-group">
                                             <h2>ข้อมูลผู้ติดต่อ</h2>
                                             <label>ชื่อ-สกุล</label>
-                                            <input class="form-control" ng-model="contactPersion.name">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>เกี่ยวข้องเป็น</label>
-                                            <input class="form-control" ng-model="contactPersion.relation">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>เบอร์โทรศัพท์</label>
-                                            <input class="form-control" ng-model="contactPersion.telephoneNumber">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <h2>ข้อมูลแผนก</h2>
-                                        <div class="form-group">
-                                            <label>ชื่อแผนก</label>
-                                            <select class="form-control" >
+                                            <input class="form-control" ng-model="employee.contactPersion.name">
+                                                    <p class="help-block">Example block-level help text here.</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>เกี่ยวข้องเป็น</label>
+                                                    <input class="form-control" ng-model="employee.contactPersion.relation">
+                                                    <p class="help-block">Example block-level help text here.</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>เบอร์โทรศัพท์</label>
+                                                    <input class="form-control" ng-model="employee.contactPersion.telephoneNumber">
+                                                    <p class="help-block">Example block-level help text here.</p>
+                                                </div>
+                                                <h2>ข้อมูลแผนก</h2>
+                                                <div class="form-group">
+                                                    <label>ชื่อแผนก</label>
+                                                    <select class="form-control" >
                                                 <option ng-repeat="dep in departments.content">{{dep.name}}</option>
 
                                             </select>
@@ -503,29 +503,29 @@ and open the template in the editor.
                                         <div class="form-group">
                                             <h2>ข้อมูลบัญชีธนาคาร</h2>
                                             <label>เลขบัญชีธนาคาร</label>
-                                            <input class="form-control" ng-model="bankAccount.addcountid">
+                                            <input class="form-control" ng-model="employee.bankAccount.addcountid">
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                         <div class="form-group">
                                             <label>ธนาคาร</label>
-                                            <input class="form-control" ng-model="bankAccount.bankname">
+                                            <input class="form-control" ng-model="employee.bankAccount.bankname">
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
 
                                         <div class="form-group">
                                             <label>ชื่อบัญชี้</label>
-                                            <input class="form-control" ng-model="bankAccount.addcountname" >
+                                            <input class="form-control" ng-model="employee.bankAccount.addcountname" >
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>
                                         <div class="form-group">
                                             <label>ประเภทบัญชี</label>
-                                            <input class="form-control" ng-model="bankAccount.addcounttype" >
+                                            <input class="form-control" ng-model="employee.bankAccount.addcounttype" >
                                             <p class="help-block">Example block-level help text here.</p>
                                         </div>                        
                                         <h2>สิทธิการใช้งาน</h2>
                                         <div class="form-group">
                                             <label>ระบุสิทธิ</label>
-                                            <select class="form-control" >
+                                            <select class="form-control">
                                                 <option ng-repeat="dep in departments.content">{{dep.name}}</option>
                                             </select>
                                         </div>
@@ -588,8 +588,8 @@ and open the template in the editor.
                         <tbody>
                         <thead>
                             <tr class="odd gradeX" ng-repeat="emp in employees.content">
-                                <td>{{emp.bankAccount}}</td> 
-                                <td>{{emp.contactPersion}}</td>
+                                <td>{{emp.bankAccount.id}}</td> 
+                                <td>{{emp.contactPersion.id}}</td>
                                 <td>{{emp.department}}</td>
                                 <td>
                                     <form method="post">
