@@ -61,10 +61,7 @@ public class ContactPersion implements Serializable{
         this.relation = relation;
     }
 
- 
-    
-    
-
+   
     @Override
     public int hashCode() {
         int hash = 5;

@@ -9,19 +9,6 @@ angular.module('employee')
             $scope.employee = {};
             $scope.departments = {};
 
-            $scope.contactPersion = {};
-            $scope.bankAccount = {};
-            /////////////////////////////////////////////////////////////////////////////////////
-            $scope.saveAll = function () {
-                $http.post('/Allsave', $scope.employee,$scope.departments,$scope.contactPersion,$scope.bankAccount).success(function (data) {
-                    load();
-                    $scope.error = {};
-                }).error(function (data, status, header, config) {
-                    $scope.error = data;
-                });
-            };
-            
-           ///////////////////////////////////////////////////////////////////////////////////////
 
             $scope.error = {};
             $scope.page = 1;

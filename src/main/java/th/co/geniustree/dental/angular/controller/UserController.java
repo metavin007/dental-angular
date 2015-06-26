@@ -33,14 +33,7 @@ public class UserController {
 
     @Autowired
     private UserRepo userRepo;
-    @Autowired
-    private AuthorityRepo authorityRepo;
-    @Autowired
-    private BankAccountRepo bankAccountRepo;
-    @Autowired
-    private ContactpersionRepo contactpersionRepo;
-    @Autowired
-    private DepartmentRepo departmentRepo;
+   
 
     @RequestMapping(value = "/users")
     public Page<User> getUser(Pageable pageable) {
@@ -60,14 +53,6 @@ public class UserController {
     @RequestMapping(value = "/users/search", method = RequestMethod.POST)
     public Page<User> searchUser(@RequestBody String keyword, Pageable pageable) {
         return userRepo.findByNameTHOrEmail(keyword, keyword, pageable);
-    }
-
-    @RequestMapping(value = "/Allsave")
-    public void saveAll(@Validated @RequestBody User user, BankAccount bankAccount, ContactPersion contactPersion) {
-
-        bankAccountRepo.save(bankAccount);
-        contactpersionRepo.save(contactPersion);
-        userRepo.save(user);
     }
 
 }
