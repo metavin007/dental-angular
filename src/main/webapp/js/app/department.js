@@ -29,6 +29,7 @@ angular.module('department')
                       $scope.error = data;
                 });
             };
+            
             $scope.delete = function(dep) {
                 $http.post('/departmentdelete',dep).success(function (data) {
                     load();

@@ -14,24 +14,31 @@ angular.module('employee')
                 $http.get('/users').success(function (data) {
                     $scope.employees = data;
                 }).error(function (data, status, header, config) {
-
                 });
             }
+            /////////////////////////////////////////////////////////////////////////////////////
             loaddepartment();
             function loaddepartment() {
                 $http.get('/department').success(function (data) {
                     $scope.departments = data;
+                    console.log(data);
                 }).error(function (data, status, header, config) {
                 });
             };
-            loadauthority();
-            function loadauthority() {
-                $http.get('/authoritytest').success(function (data) {
-                    $scope.authoritys = data;
+             $scope.savedepartment = function() {
+                $http.post('/department', $scope.departments).success(function (data) {
+                     loaddepartment();
+                    $scope.error = {};
                 }).error(function (data, status, header, config) {
-
                 });
             };
+            $scope.deletedepartment = function(dep) {
+                $http.post('/departmentdelete',dep).success(function (data) {  
+                     loaddepartment();
+                }).error(function (data, status, header, config) {
+                });
+            };
+         ////////////////////////////////////////////////////////////////////////////////////////
 
 
             $scope.clear = function () {

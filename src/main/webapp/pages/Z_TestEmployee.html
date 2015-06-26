@@ -580,12 +580,12 @@ and open the template in the editor.
                     <div class="panel-heading">
                         ตารางกรอกข้อมูลแผนก
                     </div>
-                    <div class="panel-body" ng-controller="">
+                    <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>เพิ่มแผนก</label>
-                                    <input class="form-control" ng-model="" ng-click="">
+                                    <input class="form-control" ng-model="departments.name"  ng-click="clear()">
                                     <p class="help-block">Example block-level help text here.</p>
                                 </div>
 
@@ -596,40 +596,40 @@ and open the template in the editor.
                             </div>
 
                         </div>
-                        <button type="button" class="btn btn-success"  ng-click="" style="margin-left: 40%;">บันทึก</button> 
+                        <button type="button" class="btn btn-success"  ng-click="savedepartment()" style="margin-left: 40%;">บันทึก</button> 
                         <!-- /.col-lg-6 (nested) -->
                     </div>
                     <!-- /.row (nested) -->
                 </div>
 
 
-                <!--                /////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-                
+                <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                    <div class="dataTable_wrapper">
-                        <table class="table table-striped table-bordered table-hover" >
-                            <thead>
-                                <tr>
-                                    <td>ID</td>
-                                    <td>Department Name</td>
-                                    <td></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="odd gradeX" ng-repeat="dep in departments.content">
-                                    <td>{{dep.id}}</td>
-                                    <td>{{dep.name}}</td>
-                                    <td>
-                                        <form method="post">
-                                            <input type="submit" value="Delete" class="btn btn-danger" ng-click=""> 
-                                            <!--                                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">-->
-                                        </form>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover" >
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Department Name</td>
+                                <td></td>
+                            </tr>                                           
+                        </thead>
+                        <tbody>
+                        <thead>
+                            <tr class="odd gradeX" ng-repeat="dep in departments.content">
+                                <td>{{dep.id}}</td>
+                                <td>{{dep.name}}</td>
+                                <td>
+                                    <form method="post">
+                                        <input type="submit" value="Delete" class="btn btn-danger" ng-click="deletedepartment(dep)"> 
+                                        <!--                                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">-->
+                                    </form>
+                                </td>
+                        </thead>
+                        </tbody>
+                    </table>
+                </div>
+
                 <!-- /.row -->
             </div>
 
@@ -639,11 +639,6 @@ and open the template in the editor.
 
 
 
-
-        <style>
-
-
-        </style>
 
 
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
@@ -659,6 +654,6 @@ and open the template in the editor.
 
         <script src="../js/angular.min.js"></script>
         <script src="../js/app/employee.js"></script>
-      
+
     </body>
 </html>
