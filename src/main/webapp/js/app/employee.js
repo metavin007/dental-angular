@@ -6,8 +6,9 @@ angular.module('employee')
             $scope.keyword = null;
     
             $scope.employees = {};
-            $scope.employee = {}; 
+            $scope.employee = {};
             $scope.departments = {};
+
             $scope.contactPersion = {};
             $scope.bankAccount = {};
             /////////////////////////////////////////////////////////////////////////////////////
@@ -21,7 +22,9 @@ angular.module('employee')
             };
             
            ///////////////////////////////////////////////////////////////////////////////////////
+
             $scope.error = {};
+            $scope.page = 1;
             load();
             function load() {
                 $http.get('/users').success(function (data) {
@@ -37,21 +40,22 @@ angular.module('employee')
                     console.log(data);
                 }).error(function (data, status, header, config) {
                 });
-            };
-             $scope.savedepartment = function() {
+            }
+            ;
+            $scope.savedepartment = function () {
                 $http.post('/department', $scope.departments).success(function (data) {
-                     loaddepartment();
+                    loaddepartment();
                     $scope.error = {};
                 }).error(function (data, status, header, config) {
                 });
             };
-            $scope.deletedepartment = function(dep) {
-                $http.post('/departmentdelete',dep).success(function (data) {  
-                     loaddepartment();
+            $scope.deletedepartment = function (dep) {
+                $http.post('/departmentdelete', dep).success(function (data) {
+                    loaddepartment();
                 }).error(function (data, status, header, config) {
                 });
             };
-         ////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////
 
 
             $scope.clear = function () {
@@ -81,5 +85,10 @@ angular.module('employee')
                     $scope.employees = data;
                 });
             };
-
+            $scope.nextPage = function () {
+                $scope.page++;
+            };
+            $scope.backPage = function () {
+                $scope.page--;
+            };
         });
