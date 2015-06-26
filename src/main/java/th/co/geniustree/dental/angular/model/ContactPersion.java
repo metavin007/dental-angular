@@ -23,11 +23,27 @@ import javax.persistence.Table;
 public class ContactPersion implements Serializable{
     @Id
     @SequenceGenerator(name = "ContactPersion",sequenceName = "CONTACTPERSION_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "ContactPersion",strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "ContactPersion",strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String name;
     private String telephoneNumber;
     private String relation;
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+    }
+
+    public String getRelation() {
+        return relation;
+    }
+
+    public void setRelation(String relation) {
+        this.relation = relation;
+    }
 
     public String getName() {
         return name;
@@ -37,28 +53,12 @@ public class ContactPersion implements Serializable{
         this.name = name;
     }
 
-    public String getTelephonenumber() {
-        return telephoneNumber;
-    }
-
-    public void setTelephonenumber(String telephonenumber) {
-        this.telephoneNumber = telephonenumber;
-    }
-
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getReletion() {
-        return relation;
-    }
-
-    public void setReletion(String reletion) {
-        this.relation = reletion;
     }
 
     @Override
