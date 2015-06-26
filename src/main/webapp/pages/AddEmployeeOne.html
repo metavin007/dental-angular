@@ -408,6 +408,7 @@ and open the template in the editor.
                     </div>
                     <!-- /.sidebar-collapse -->
                 </div>
+
                 <!-- /.navbar-static-side -->
             </nav>
             <div id="page-wrapper">
@@ -425,7 +426,7 @@ and open the template in the editor.
                                 ตารางกรอกข้อมูลพนักงาน
                             </div>
                             <div class="panel-body">
-                                <div class="row">
+                                <div class="row" ng-show="page === 1">
                                     <div class="col-lg-6">
                                         <form role="form">
                                             <div class="form-group">
@@ -530,16 +531,16 @@ and open the template in the editor.
                                                                                     <input type="file">
                                                                                 </div>-->
 
-<!--                                        <div class="form-group">
-                                            <label>เพศ</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">ชาย
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">หญิง
-                                            </label>
-
-                                        </div>-->
+                                        <!--                                        <div class="form-group">
+                                                                                    <label>เพศ</label>
+                                                                                    <label class="radio-inline">
+                                                                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">ชาย
+                                                                                    </label>
+                                                                                    <label class="radio-inline">
+                                                                                        <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">หญิง
+                                                                                    </label>
+                                        
+                                                                                </div>-->
                                         <!--                                        <div class="form-group">
                                                                                     <label>กรุ๊ปเลือด</label>
                                                                                     <label class="radio-inline">
@@ -557,7 +558,7 @@ and open the template in the editor.
                                         
                                             
                                         </div>-->
-                                         <div class="form-group">
+                                        <div class="form-group">
                                             <label>เพศ</label>
                                             <input class="form-control" ng-model="employee.sex">
                                             <p class="help-block">Example block-level help text here.</p>
@@ -618,10 +619,95 @@ and open the template in the editor.
 
 
                                     </div>
-                                    <a href="AddEmployeeTwo.html"> <button type="button" class="btn btn-success" ng-click="" style="margin-left: 90%;">ต่อไป</button> </a>
-                                    
+                                    <button type="button" class="btn btn-success" ng-click="nextPage()" style="margin-left: 90%;">ต่อไป</button>
+
                                     <button type="button" class="btn btn-success" ng-click="save()" style="margin-top: 20px; margin-left: 80%;">ทดลองsaveข้อมูลหน้านี้</button> 
                                     <label style="margin-top: 20px; margin-left: 80%;" >เมื่อ save แล้ว ลอง ไปดูหน้า ตารางพนักงานนะ</label>
+                                    <!-- /.col-lg-6 (nested) -->
+                                </div>
+                                <div class="panel-body" ng-show="page === 2">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <h2>ข้อมูลผู้ติดต่อ</h2>
+                                                    <label>ชื่อ-สกุล</label>
+                                                    <input class="form-control" ng-model="contactpersion.name">
+                                                    <p class="help-block">Example block-level help text here.</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>เกี่ยวข้องเป็น</label>
+                                                    <input class="form-control" ng-model="contactpersion.relation">
+                                                    <p class="help-block">Example block-level help text here.</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>เบอร์โทรศัพท์</label>
+                                                    <input class="form-control" ng-model="contactpersion.telephoneNumber">
+                                                    <p class="help-block">Example block-level help text here.</p>
+                                                </div>
+                                                <h2>ข้อมูลแผนก</h2>
+                                                <div class="form-group">
+                                                    <label>ชื่อแผนก</label>
+                                                    <select class="form-control" >
+                                                        <option ng-repeat="dep in departments.content">{{dep.name}}</option>
+
+                                                    </select>
+                                                </div>
+
+                                            </form>    
+
+
+
+                                        </div>
+                                        <!-- /.col-lg-6 (nested) -->
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <h2>ข้อมูลบัญชีธนาคาร</h2>
+                                                <label>เลขบัญชีธนาคาร</label>
+                                                <input class="form-control" ng-model="bankaccount.addcountid">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>ธนาคาร</label>
+                                                <input class="form-control" ng-model="bankaccount.bankname">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>ชื่อบัญชี้</label>
+                                                <input class="form-control" ng-model="bankaccount.addcountname" >
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>ประเภทบัญชี</label>
+                                                <input class="form-control" ng-model="bankaccount.addcounttype" >
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>                        
+                                            <h2>สิทธิการใช้งาน</h2>
+                                            <div class="form-group">
+                                                <label>ระบุสิทธิ์</label>
+                                                <div class="checkbox" >
+                                                    <label>
+                                                        <input type="checkbox" value="">บันทึกข้อมูล
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">ลบข้อมูล
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">แก้ไขข้อมูล
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <button type="button" class="btn btn-danger" style="margin-left: 85%;" ng-click="backPage()">กลับ</button></a>
+                                    <button type="button" class="btn btn-success">บันทึก</button>
                                     <!-- /.col-lg-6 (nested) -->
                                 </div>
                                 <!-- /.row (nested) -->
