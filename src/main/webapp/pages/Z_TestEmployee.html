@@ -468,10 +468,14 @@ and open the template in the editor.
                                         <h2>ข้อมูลแผนก</h2>
                                         <div class="form-group">
                                             <label>ชื่อแผนก</label>
-
-                                            <select class="form-control">
-                                                <option ng-repeat="dep in departments.content" ng-model="employee.department">{{dep.name}}</option>
+<!--                                            <select ng-model="dep"
+                                                    ng-change="selectDepartment()" 
+                                                    ng-options="depId as dep.name for dep in departments.content"></select>-->
+                                            
+                                            <select class="form-control" >
+                                                <option ng-model="employee.department"  ng-repeat="dep in departments.content" value="{{dep.id}}" ng-click="click()" >{{dep.name}}</option>
                                             </select>
+                                            
                                         </div>
 
 

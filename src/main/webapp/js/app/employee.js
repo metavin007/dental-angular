@@ -4,10 +4,12 @@ angular.module('employee', []);
 angular.module('employee')
         .controller('EmployeeController', function ($scope, $http) {
             $scope.keyword = null;
-    
+
             $scope.employees = {};
             $scope.employee = {};
-            $scope.departments = {};
+            $scope.departments = {
+                content : []
+            };
 
 
             $scope.error = {};
@@ -16,6 +18,9 @@ angular.module('employee')
             function load() {
                 $http.get('/users').success(function (data) {
                     $scope.employees = data;
+                    angular.forEach(data.content, function(item){
+                        console.log(item.department);
+                    });
                 }).error(function (data, status, header, config) {
                 });
             }
@@ -28,7 +33,11 @@ angular.module('employee')
                 }).error(function (data, status, header, config) {
                 });
             }
-            ;
+            
+//            $scope.selectDepartment = function(){
+//                console.log($scope.dep);
+//            };
+            
             $scope.savedepartment = function () {
                 $http.post('/department', $scope.departments).success(function (data) {
                     loaddepartment();
@@ -43,7 +52,9 @@ angular.module('employee')
                 });
             };
             ////////////////////////////////////////////////////////////////////////////////////////
-
+            $scope.click = function () {
+                $scope.employees = $scope.departments;
+            };
 
             $scope.clear = function () {
                 $scope.error = {};
@@ -78,4 +89,6 @@ angular.module('employee')
             $scope.backPage = function () {
                 $scope.page--;
             };
+
+
         });
