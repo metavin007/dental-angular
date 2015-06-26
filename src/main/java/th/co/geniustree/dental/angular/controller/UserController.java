@@ -56,17 +56,18 @@ public class UserController {
     public void deleteUser(@RequestBody User user) {
         userRepo.delete(user);
     }
+
     @RequestMapping(value = "/users/search", method = RequestMethod.POST)
     public Page<User> searchUser(@RequestBody String keyword, Pageable pageable) {
         return userRepo.findByNameTHOrEmail(keyword, keyword, pageable);
     }
-    
+
     @RequestMapping(value = "/Allsave")
-    public void saveAll(@Validated @RequestBody User user,BankAccount bankAccount,ContactPersion contactPersion,Department department){
-       userRepo.save(user);
-       bankAccountRepo.save(bankAccount);
-       contactpersionRepo.save(contactPersion);
-       departmentRepo.save(department);
+    public void saveAll(@Validated @RequestBody User user, BankAccount bankAccount, ContactPersion contactPersion) {
+
+        bankAccountRepo.save(bankAccount);
+        contactpersionRepo.save(contactPersion);
+        userRepo.save(user);
     }
-    
+
 }

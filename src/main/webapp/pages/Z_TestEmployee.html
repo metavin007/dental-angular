@@ -453,23 +453,23 @@ and open the template in the editor.
                                             <h2>ข้อมูลผู้ติดต่อ</h2>
                                             <label>ชื่อ-สกุล</label>
                                             <input class="form-control" ng-model="employee.contactPersion.name">
-                                                    <p class="help-block">Example block-level help text here.</p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>เกี่ยวข้องเป็น</label>
-                                                    <input class="form-control" ng-model="employee.contactPersion.relation">
-                                                    <p class="help-block">Example block-level help text here.</p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>เบอร์โทรศัพท์</label>
-                                                    <input class="form-control" ng-model="employee.contactPersion.telephoneNumber">
-                                                    <p class="help-block">Example block-level help text here.</p>
-                                                </div>
-                                                <h2>ข้อมูลแผนก</h2>
-                                                <div class="form-group">
-                                                    <label>ชื่อแผนก</label>
-                                                    <select class="form-control" >
-                                                <option ng-repeat="dep in departments.content">{{dep.name}}</option>
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>เกี่ยวข้องเป็น</label>
+                                            <input class="form-control" ng-model="employee.contactPersion.relation">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>เบอร์โทรศัพท์</label>
+                                            <input class="form-control" ng-model="employee.contactPersion.telephoneNumber">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+                                        <h2>ข้อมูลแผนก</h2>
+                                        <div class="form-group">
+                                            <label>ชื่อแผนก</label>
+                                            <select class="form-control">
+                                                <option ng-repeat="dep in departments.content" ng-model="employee.department">{{dep.name}}</option>
 
                                             </select>
                                         </div>
@@ -531,7 +531,7 @@ and open the template in the editor.
                                         </div>
                                     </div>
 
-                                    <button type="button" class="btn btn-success" ng-click="saveAll()" style="margin-top: 20px; margin-left: 80%;">ทดลองsaveข้อมูลหน้านี้</button> 
+                                    <button type="button" class="btn btn-success" ng-click="save()" style="margin-top: 20px; margin-left: 80%;">ทดลองsaveข้อมูลหน้านี้</button> 
 
                                     <!-- /.col-lg-6 (nested) -->
                                 </div>
@@ -594,7 +594,7 @@ and open the template in the editor.
                                 <td>
                                     <form method="post">
                                         <input type="submit" value="Delete" class="btn btn-danger" ng-click="delete(emp)"> 
-<!--                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">-->
+                                        <!--                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">-->
                                     </form>
                                 </td>
 
