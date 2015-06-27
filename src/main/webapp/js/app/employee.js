@@ -6,21 +6,10 @@ angular.module('employee')
             $scope.keyword = null;
             $scope.employees = {};
             $scope.employee = {};
-            $scope.departments = {};
-
-            $scope.contactPersion = {};
-            $scope.bankAccount = {};
-            /////////////////////////////////////////////////////////////////////////////////////
-            $scope.saveAll = function () {
-                $http.post('/Allsave', $scope.employee,$scope.departments,$scope.contactPersion,$scope.bankAccount).success(function (data) {
-                    load();
-                    $scope.error = {};
-                }).error(function (data, status, header, config) {
-                    $scope.error = data;
-                });
+            $scope.departments = {
+                content : []
             };
-            
-           ///////////////////////////////////////////////////////////////////////////////////////
+
 
             $scope.error = {};
             $scope.page = 1;
@@ -28,6 +17,9 @@ angular.module('employee')
             function load() {
                 $http.get('/users').success(function (data) {
                     $scope.employees = data;
+                    angular.forEach(data.content, function(item){
+                        console.log(item.department);
+                    });
                 }).error(function (data, status, header, config) {
                 });
             }
@@ -40,7 +32,11 @@ angular.module('employee')
                 }).error(function (data, status, header, config) {
                 });
             }
-            ;
+            
+//            $scope.selectDepartment = function(){
+//                console.log($scope.dep);
+//            };
+            
             $scope.savedepartment = function () {
                 $http.post('/department', $scope.departments).success(function (data) {
                     loaddepartment();
@@ -55,7 +51,9 @@ angular.module('employee')
                 });
             };
             ////////////////////////////////////////////////////////////////////////////////////////
-
+            $scope.click = function () {
+                $scope.employees = $scope.departments;
+            };
 
             $scope.clear = function () {
                 $scope.error = {};
@@ -90,4 +88,6 @@ angular.module('employee')
             $scope.backPage = function () {
                 $scope.page--;
             };
+
+
         });

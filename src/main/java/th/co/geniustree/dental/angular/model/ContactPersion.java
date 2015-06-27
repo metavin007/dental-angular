@@ -29,6 +29,22 @@ public class ContactPersion implements Serializable{
     private String telephoneNumber;
     private String relation;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getTelephoneNumber() {
         return telephoneNumber;
     }
@@ -45,22 +61,7 @@ public class ContactPersion implements Serializable{
         this.relation = relation;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
+   
     @Override
     public int hashCode() {
         int hash = 5;
