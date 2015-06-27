@@ -6,7 +6,8 @@ angular.module('employee')
             $scope.keyword = null;
             $scope.employees = {};
             $scope.employee = {};
-           
+            
+            $scope.authority = {};
             $scope.departments = {
                 content : []
             };
@@ -34,6 +35,14 @@ angular.module('employee')
                 });
             }
             
+            loadauthority();
+            function loadauthority() {
+                $http.get('/authority').success(function (data) {
+                    $scope.departments = data;
+                    console.log(data);
+                }).error(function (data, status, header, config) {
+                });
+            }
 //            $scope.selectDepartment = function(){
 //                console.log($scope.dep);
 //            };
