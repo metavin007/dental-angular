@@ -429,24 +429,24 @@ and open the template in the editor.
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>อีเมล</label>
-                                            <input class="form-control" ng-model="employee.email">*
+                                            <label>อีเมล</label><span><h3 class="require">*</h3></span>
+                                            <input class="form-control" ng-model="employee.email">
                                             <p class="help-block"><span ng-show="error.violations.email.message" class="alert alert-danger">{{error.violations.email.message}}</span></p>
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label>รหัสบัตรประจำตัวประชาชน</label>
-                                            <input class="form-control" ng-model="employee.pid">*
+                                            <label>รหัสบัตรประจำตัวประชาชน</label><span><h3 class="require">*</h3></span>
+                                            <input class="form-control" ng-model="employee.pid">
                                             <p class="help-block"><span ng-show="error.violations.pid.message" class="alert alert-danger">{{error.violations.pid.message}}</span></p>
                                         </div>
                                         <div class="form-group" >
-                                            <label>ชื่อ-สกุล ไทย</label>
-                                            <input class="form-control" ng-model="employee.nameTH">*
+                                            <label>ชื่อ-สกุล ไทย</label><span><h3 class="require">*</h3></span>
+                                            <input class="form-control" ng-model="employee.nameTH">
                                             <p class="help-block"><span ng-show="error.violations.nameTH.message" class="alert alert-danger">{{error.violations.nameTH.message}}</span></p>
                                         </div>
                                                <div class="form-group">
-                                            <label>เบอร์โทรศัพท์มือถือ</label>
-                                            <input class="form-control" ng-model="employee.mobile">*
+                                            <label>เบอร์โทรศัพท์มือถือ</label><span><h3 class="require">*</h3></span>
+                                            <input class="form-control" ng-model="employee.mobile">
                                             <p class="help-block"><span ng-show="error.violations.mobile.message" class="alert alert-danger">{{error.violations.mobile.message}}</span></p>
                                         </div>
                                         
@@ -479,7 +479,8 @@ and open the template in the editor.
                                     </div>
                                     <!-- /.col-lg-6 (nested) -->
                                     <div class="col-lg-6">
-                            
+                                    
+
                                         <!--                                        ////////////////////////////////////////////////////////////////////////////////////////-->
                                         <div class="form-group">
                                             <h2>ข้อมูลบัญชีธนาคาร</h2>
@@ -682,6 +683,13 @@ and open the template in the editor.
         <style>
             .alert.alert-danger{
                 padding: 4px 8px 1px 8px;
+            }
+            .require{
+                color: RED;
+                display: inline;
+                left: 5px;
+                top: 10px;
+                position: relative;
             }
         </style>
     </body>
