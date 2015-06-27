@@ -5,6 +5,7 @@
  */
 package th.co.geniustree.dental.angular.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
@@ -34,16 +35,16 @@ public class Department implements Serializable{
     @Size(max = 250)
     private String name;
     
-    
+    @JsonIgnore
     @OneToMany(mappedBy = "department")
-    private List<User> Users;
+    private List<User> users;
 
     public List<User> getUsers() {
-        return Users;
+        return users;
     }
 
     public void setUsers(List<User> Users) {
-        this.Users = Users;
+        this.users = Users;
     }
 
     public int getId() {
