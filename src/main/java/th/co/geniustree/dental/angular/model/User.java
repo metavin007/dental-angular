@@ -41,8 +41,8 @@ public class User implements Serializable, UserDetails {
     @GeneratedValue(generator = "user", strategy = GenerationType.SEQUENCE)
     private Integer id;
     
-    @NotBlank(message = "please input password")
-    @Column(name = "password" , nullable = false)
+//    @NotBlank(message = "please input password")
+//    @Column(name = "password" , nullable = false)
     private String password;
    
     @Column(name = "email" , nullable = false , unique = true)
@@ -66,17 +66,17 @@ public class User implements Serializable, UserDetails {
     private String blood;
     private String soldierstatus;
     private String marrystatus;
-    @Column(name = "nation" , nullable = false)
-    @NotBlank(message = "please input nation")
+//    @Column(name = "nation" , nullable = false)
+//    @NotBlank(message = "please input nation")
     private String nation;
    
-    @Column(name = "race" , nullable = false)
-    @NotBlank(message = "please input race")
+//    @Column(name = "race" , nullable = false)
+//    @NotBlank(message = "please input race")
     private String race;
    
     private String addressofpid;
-    @Column(name = "address" , nullable = false)
-    @NotBlank(message = "please input address")
+//    @Column(name = "address" , nullable = false)
+//    @NotBlank(message = "please input address")
     private String address;
    
     private String tel;
