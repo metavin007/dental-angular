@@ -9,7 +9,7 @@ INSERT INTO DEPARTMENT(id,name) values(DEPARTMENT_SEQ.nextVal,'software singular
 
 INSERT INTO AUTHORITY(ROLES) values('add');
 INSERT INTO AUTHORITY(ROLES) values('update');
-INSERT INTO AUTHORITY(ROLES) values('delect');
+INSERT INTO AUTHORITY(ROLES) values('delete');
 
 -- INSERT INTO BANKACCOUNT(id,addcountid,addcountname,bankname,addcounttype) values(BANKACCOUNT_SEQ.nextVal,
 -- '1234','xxxx','xxxx','xxxxx')

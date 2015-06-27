@@ -1,13 +1,13 @@
 /* global angular */
 
-angular.module('employee', []);
+angular.module('employee', ['checklist-model']);
 angular.module('employee')
         .controller('EmployeeController', function ($scope, $http) {
             $scope.keyword = null;
             $scope.employees = {};
             $scope.employee = {};
             
-            $scope.authority = {};
+            $scope.authorities = {};
             $scope.departments = {
                 content : []
             };
@@ -38,11 +38,11 @@ angular.module('employee')
             loadauthority();
             function loadauthority() {
                 $http.get('/authority').success(function (data) {
-                    $scope.departments = data;
-                    console.log(data);
+                    $scope.authorities = data;
                 }).error(function (data, status, header, config) {
                 });
             }
+            loadauthority();
 //            $scope.selectDepartment = function(){
 //                console.log($scope.dep);
 //            };
