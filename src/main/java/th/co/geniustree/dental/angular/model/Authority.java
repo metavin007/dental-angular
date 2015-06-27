@@ -5,6 +5,7 @@
  */
 package th.co.geniustree.dental.angular.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -56,6 +57,7 @@ public class Authority implements GrantedAuthority, Serializable {
     }
 
     @Override
+    @JsonIgnore
     public String getAuthority() {
         return role;
     }

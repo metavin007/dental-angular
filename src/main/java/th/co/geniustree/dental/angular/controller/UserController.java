@@ -13,15 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import th.co.geniustree.dental.angular.model.Authority;
-import th.co.geniustree.dental.angular.model.BankAccount;
-import th.co.geniustree.dental.angular.model.ContactPersion;
-import th.co.geniustree.dental.angular.model.Department;
 import th.co.geniustree.dental.angular.model.User;
-import th.co.geniustree.dental.angular.repo.AuthorityRepo;
-import th.co.geniustree.dental.angular.repo.BankAccountRepo;
-import th.co.geniustree.dental.angular.repo.ContactpersionRepo;
-import th.co.geniustree.dental.angular.repo.DepartmentRepo;
 import th.co.geniustree.dental.angular.repo.UserRepo;
 
 /**

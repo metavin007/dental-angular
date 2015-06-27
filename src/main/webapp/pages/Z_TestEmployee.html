@@ -507,24 +507,12 @@ and open the template in the editor.
                                         <h2>สิทธิการใช้งาน</h2>
                                         <div class="form-group">
                                          
-                                          <div class="form-group">
-                                            <label>ระบุสิทธิ</label>
-                                            <div class="checkbox">
+                                            <div class="checkbox" ng-repeat="auth in authorities.content">
                                                 <label>
-                                                    <input type="checkbox" ng-model="employee.authorities.role" >Insert
+                                                    <input type="checkbox" checklist-model="employee.authorities" checklist-value="auth">{{auth}}
                                                 </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" >delete
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" >Update
-                                                </label>
-                                            </div>
                                         </div>
+                                            {{employee.authorities}}
                                         </div>
                                     </div>
 
@@ -591,7 +579,6 @@ and open the template in the editor.
                                 <td>
                                     <form method="post">
                                         <input type="submit" value="Delete" class="btn btn-danger" ng-click="delete(emp)"> 
-                                        <!--                                        <input type="submit" class="btn btn-primary" value="Update" ng-click="">-->
                                     </form>
                                 </td>
 
@@ -678,8 +665,7 @@ and open the template in the editor.
 
         <script src="../js/angular.min.js"></script>
         <script src="../js/app/employee.js"></script>
-
-        
+        <script src="../js/checklist-model.js"></script>
         <style>
             .alert.alert-danger{
                 padding: 4px 8px 1px 8px;
