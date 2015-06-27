@@ -30,6 +30,7 @@ public class CustomerController {
 
     @Autowired
     private CustomerRepo customerRepo;
+    @Autowired
     private UserRepo userRepo;
 
     @RequestMapping(value = "/customers")
