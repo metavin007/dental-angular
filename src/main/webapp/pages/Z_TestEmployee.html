@@ -468,9 +468,7 @@ and open the template in the editor.
                                         <h2>ข้อมูลแผนก</h2>
                                         <div class="form-group">
                                             <label>ชื่อแผนก</label>
-                                            <select class="form-control" >
-                                                <option ng-repeat="dep in departments.content">{{dep.name}}</option>
-
+                                            <select class="form-control" ng-model="employee.department" ng-options="dep.name for dep in departments.content">
                                             </select>
                                         </div>
 

@@ -4,7 +4,6 @@ angular.module('employee', []);
 angular.module('employee')
         .controller('EmployeeController', function ($scope, $http) {
             $scope.keyword = null;
-    
             $scope.employees = {};
             $scope.employee = {};
             $scope.departments = {};
