@@ -6,6 +6,7 @@ angular.module('employee')
             $scope.keyword = null;
             $scope.employees = {};
             $scope.employee = {};
+           
             $scope.departments = {
                 content : []
             };
