@@ -509,10 +509,9 @@ and open the template in the editor.
                                          
                                             <div class="checkbox" ng-repeat="auth in authorities.content">
                                                 <label>
-                                                    <input type="checkbox" checklist-model="employee.authorities" checklist-value="auth">{{auth}}
+                                                    <input type="checkbox" checklist-model="employee.authorities" checklist-value="auth">{{auth.role}}
                                                 </label>
                                         </div>
-                                            {{employee.authorities}}
                                         </div>
                                     </div>
 
