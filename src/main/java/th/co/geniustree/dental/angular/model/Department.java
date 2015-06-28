@@ -21,15 +21,15 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
- * @author User
+ * @author Employee
  */
 @Entity
 @Table(name="DEPARTMENT")
 public class Department implements Serializable{
     @Id
-    @SequenceGenerator(name = "Department",sequenceName = "DEPARTMENT_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "Department",strategy = GenerationType.SEQUENCE)
-    @Column(name = "id")
+    @SequenceGenerator(name = "DEPARTMENT",sequenceName = "DEPARTMENT_SEQ",allocationSize = 1)
+    @GeneratedValue(generator = "DEPARTMENT",strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID")
     private int id;
     @NotBlank(message = "name is not empty")
     @Size(max = 250)
@@ -37,15 +37,17 @@ public class Department implements Serializable{
     
     @JsonIgnore
     @OneToMany(mappedBy = "department")
-    private List<User> users;
+    private List<Employee> employees;
 
-    public List<User> getUsers() {
-        return users;
+    public List<Employee> getEmployees() {
+        return employees;
     }
 
-    public void setUsers(List<User> Users) {
-        this.users = Users;
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
+
+    
 
     public int getId() {
         return id;

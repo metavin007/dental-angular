@@ -17,7 +17,7 @@ angular.module('employee')
             $scope.page = 1;
             load();
             function load() {
-                $http.get('/users').success(function (data) {
+                $http.get('/employees').success(function (data) {
                     $scope.employees = data;
                     angular.forEach(data.content, function(item){
                         console.log(item.department);
@@ -70,7 +70,7 @@ angular.module('employee')
             };
 
             $scope.save = function () {
-                $http.post('/userssave', $scope.employee).success(function (data) {
+                $http.post('/employeessave', $scope.employee).success(function (data) {
                     load();
                     $scope.error = {};
                 }).error(function (data, status, header, config) {
@@ -78,7 +78,7 @@ angular.module('employee')
                 });
             };
             $scope.delete = function (emp) {
-                $http.post('/usersdelete', emp).success(function (data) {
+                $http.post('/employeesdelete', emp).success(function (data) {
                     load();
                 }).error(function (data, status, header, config) {
 
@@ -88,7 +88,7 @@ angular.module('employee')
                 if (!$scope.keyword) {
                     load();
                 }
-                $http.post('/users/search', $scope.keyword).success(function (data) {
+                $http.post('/employees/search', $scope.keyword).success(function (data) {
                     $scope.employees = data;
                 });
             };

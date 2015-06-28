@@ -9,16 +9,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import th.co.geniustree.dental.angular.model.User;
+import th.co.geniustree.dental.angular.model.Employee;
 
 /**
  *
- * @author User
+ * @author Employee
  */
-public interface UserRepo extends JpaRepository<User, Integer>{
+public interface EmployeeRepo extends JpaRepository<Employee, Integer>{
 
-    public User findByEmail(String email);
-    @Query("select u from User u where u.nameTH like %?1% or u.email like %?2%")
-    public Page<User> findByNameTHOrEmail(String nameTH, String email, Pageable pageable);
+    public Employee findByEmail(String email);
+    @Query("select u from Employee u where u.nameth like %?1% or u.email like %?2%")
+    public Page<Employee> findByNameTHOrEmail(String nameth, String email, Pageable pageable);
     
 }

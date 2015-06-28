@@ -10,21 +10,21 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import th.co.geniustree.dental.angular.repo.UserRepo;
+import th.co.geniustree.dental.angular.repo.EmployeeRepo;
 
 
 /**
  *
- * @author User
+ * @author Employee
  */
 @Service
 public class MyUserDetailService implements UserDetailsService{
     @Autowired
-    private UserRepo userRepo;
+    private EmployeeRepo employeeRepo;
     
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-       UserDetails user = userRepo.findByEmail(username);
+       UserDetails user = employeeRepo.findByEmail(username);
        return user;
     }
 }

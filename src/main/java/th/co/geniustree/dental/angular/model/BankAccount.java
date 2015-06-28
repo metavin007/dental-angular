@@ -14,8 +14,8 @@ import javax.persistence.Table;
 public class BankAccount implements Serializable {
 
     @Id
-    @SequenceGenerator(name = "BankAccount", sequenceName = "BANKACCOUNT_SEQ", allocationSize = 1)
-    @GeneratedValue(generator = "BankAccount", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "BANKACCOUNT", sequenceName = "BANKACCOUNT_SEQ", allocationSize = 1)
+    @GeneratedValue(generator = "BANKACCOUNT", strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String addcountid;
     private String addcountname;

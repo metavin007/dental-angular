@@ -25,8 +25,8 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 public class Customer implements Serializable{
     @Id
-    @SequenceGenerator(name = "Customer",sequenceName = "CUSTOMER_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "Customer",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "CUSTOMER",sequenceName = "CUSTOMER_SEQ",allocationSize = 1)
+    @GeneratedValue(generator = "CUSTOMER",strategy = GenerationType.SEQUENCE)
     private BigInteger id;
     @NotBlank(message = "name is not empty")
     private String name;

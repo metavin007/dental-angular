@@ -22,11 +22,11 @@ import javax.persistence.Table;
 @Table(name = "CONTACTPERSION")
 public class ContactPersion implements Serializable{
     @Id
-    @SequenceGenerator(name = "ContactPersion",sequenceName = "CONTACTPERSION_SEQ",allocationSize = 1)
-    @GeneratedValue(generator = "ContactPersion",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "CONTACTPERSION",sequenceName = "CONTACTPERSION_SEQ",allocationSize = 1)
+    @GeneratedValue(generator = "CONTACTPERSION",strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String name;
-    private String telephoneNumber;
+    private String telephonenumber;
     private String relation;
 
     public Integer getId() {
@@ -45,13 +45,15 @@ public class ContactPersion implements Serializable{
         this.name = name;
     }
 
-    public String getTelephoneNumber() {
-        return telephoneNumber;
+    public String getTelephonenumber() {
+        return telephonenumber;
     }
 
-    public void setTelephoneNumber(String telephoneNumber) {
-        this.telephoneNumber = telephoneNumber;
+    public void setTelephonenumber(String telephonenumber) {
+        this.telephonenumber = telephonenumber;
     }
+
+   
 
     public String getRelation() {
         return relation;

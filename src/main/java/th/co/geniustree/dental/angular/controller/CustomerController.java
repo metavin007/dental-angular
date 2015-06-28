@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import th.co.geniustree.dental.angular.model.Customer;
-import th.co.geniustree.dental.angular.model.User;
+import th.co.geniustree.dental.angular.model.Employee;
 import th.co.geniustree.dental.angular.repo.CustomerRepo;
-import th.co.geniustree.dental.angular.repo.UserRepo;
+import th.co.geniustree.dental.angular.repo.EmployeeRepo;
 
 
 
@@ -31,7 +31,7 @@ public class CustomerController {
     @Autowired
     private CustomerRepo customerRepo;
     @Autowired
-    private UserRepo userRepo;
+    private EmployeeRepo userRepo;
 
     @RequestMapping(value = "/customers")
     public Page<Customer> getCustomers(Pageable pageable) {
@@ -47,7 +47,7 @@ public class CustomerController {
         customerRepo.delete(customer.getId());
     }
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public boolean loginAdmin(@RequestBody User user){
+    public boolean loginAdmin(@RequestBody Employee user){
        return userRepo.equals(user);
     }
 }

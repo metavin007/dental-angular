@@ -19,7 +19,7 @@ import org.hibernate.annotations.CollectionId;
  * @author pramoth
  */
 @Entity
-public class Doctor extends User implements Serializable{
+public class Doctor extends Employee implements Serializable{
     @Column(name = "XXX",nullable = false)
     private String xxx;
 
