@@ -44,7 +44,7 @@ and open the template in the editor.
 
     <body>
 
-        <div id="wrapper" ng-controller="EmployeeController">
+        <div id="wrapper" >
 
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -301,7 +301,7 @@ and open the template in the editor.
                                 <a href="#"><i class="fa fa-edit fa-fw"></i>จัดการข้อมูลพนักงาน<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="AddEmployeeOne.html">เพิ่มข้อมูลพนักงาน</a>
+                                        <a href="AddEmployee.html">เพิ่มข้อมูลพนักงาน</a>
                                     </li>
                                     <li>
                                         <a href="TableEmployee.html">ตารางข้อมูลพนักงาน</a>
@@ -411,7 +411,7 @@ and open the template in the editor.
 
                 <!-- /.navbar-static-side -->
             </nav>
-            <div id="page-wrapper">
+            <div id="page-wrapper" ng-controller="EmployeeController" >
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">เพิ่มข้อมูลพนักงาน</h1>
@@ -428,183 +428,49 @@ and open the template in the editor.
                             <div class="panel-body">
                                 <div class="row" ng-show="page === 1">
                                     <div class="col-lg-6">
-                                        <form role="form">
-                                            <div class="form-group">
-                                                <label>อีเมล</label>
-                                                <input class="form-control" ng-model="employee.email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>พาสเวิด</label>
-                                                <input class="form-control" ng-model="employee.password">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>รหัสบัตรประจำตัวประชาชน</label>
-                                                <input class="form-control" ng-model="employee.pid">
-                                            </div>
-                                            <div class="form-group" >
-                                                <label>ชื่อ-สกุล ไทย</label>
-                                                <input class="form-control" ng-model="employee.nameTH">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>ชื่อ-สกุล อังกฤษ</label>
-                                                <input class="form-control" ng-model="employee.nameENG">
-                                            </div>
-                                            <br>
-                                        </form>
-                                        <div class="form-group">
-                                            <label>สถานภาพทางทหาร</label>
-                                            <input class="form-control" ng-model="employee.soldierstatus">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>เบอร์โทรศัพท์</label>
-                                            <input class="form-control" ng-model="employee.mobile">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>เบอร์โทรสัพมือถือ</label>
-                                            <input class="form-control" ng-model="employee.tel">
-                                        </div>
 
 
                                     </div>
                                     <!-- /.col-lg-6 (nested) -->
                                     <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>เพศ</label>
-                                            <input class="form-control" ng-model="employee.sex">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>กรุ๊ปเลือด</label>
-                                            <input class="form-control" ng-model="employee.blood">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>เชื้อชาติ</label>
-                                            <input class="form-control" ng-model="employee.race">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>สัญชาติ</label>
-                                            <input class="form-control" ng-model="employee.nation">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>สถานภาพสมรส</label>
-                                            <input class="form-control" ng-model="employee.marrystatus">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>ที่อยู่ปัจจุบัน</label>
-                                            <textarea class="form-control" rows="3" ng-model="employee.address"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>ที่อยู่ตามบัตรประชาชน</label>
-                                            <textarea class="form-control" rows="3" ng-model="employee.addressofpid"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>วันเกิด</label>
-                                            <input class="form-control" ng-model="employee.birthday">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>วันเริ่มทำงาน</label>
-                                            <input class="form-control" ng-model="employee.startwork">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>สถานะการทำงาน</label>
-                                            <input class="form-control" ng-model="employee.workstatus">
-                                        </div>
 
 
                                     </div>
                                     <button type="button" class="btn btn-success" ng-click="nextPage()" style="margin-left: 90%;">ต่อไป</button>
 
-                                    <button type="button" class="btn btn-success" ng-click="save()" style="margin-top: 20px; margin-left: 80%;">ทดลองsaveข้อมูลหน้านี้</button> 
-                                    <label style="margin-top: 20px; margin-left: 80%;" >เมื่อ save แล้ว ลอง ไปดูหน้า ตารางพนักงานนะ</label>
                                     <!-- /.col-lg-6 (nested) -->
                                 </div>
+
                                 <div class="panel-body" ng-show="page === 2">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form role="form">
-                                                <div class="form-group">
-                                                    <h2>ข้อมูลผู้ติดต่อ</h2>
-                                                    <label>ชื่อ-สกุล</label>
-                                                    <input class="form-control" ng-model="employee.contactPersion.name">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>เกี่ยวข้องเป็น</label>
-                                                    <input class="form-control" ng-model="employee.contactPersion.relation">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>เบอร์โทรศัพท์</label>
-                                                    <input class="form-control" ng-model="employee.contactPersion.telephoneNumber">
-                                                </div>
-                                                <h2>ข้อมูลแผนก</h2>
-                                                <div class="form-group">
-                                                    <label>ชื่อแผนก</label>
-                                                    <select class="form-control" >
-                                                        <option ng-repeat="dep in departments.content">{{dep.name}}</option>
-                                                    </select>
-                                                </div>
-                                            </form>
 
 
 
                                         </div>
                                         <!-- /.col-lg-6 (nested) -->
                                         <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <h2>ข้อมูลบัญชีธนาคาร</h2>
-                                                <label>เลขบัญชีธนาคาร</label>
-                                                <input class="form-control" ng-model="bankaccount.addcountid">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>ธนาคาร</label>
-                                                <input class="form-control" ng-model="bankaccount.bankname">
-                                            </div>
 
-                                            <div class="form-group">
-                                                <label>ชื่อบัญชี้</label>
-                                                <input class="form-control" ng-model="bankaccount.addcountname" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label>ประเภทบัญชี</label>
-                                                <input class="form-control" ng-model="bankaccount.addcounttype" >
-                                            </div>                        
-                                            <h2>สิทธิการใช้งาน</h2>
-                                            <div class="form-group">
-                                                <label>ระบุสิทธิ์</label>
-                                                <div class="checkbox" >
-                                                    <label>
-                                                        <input type="checkbox" value="">บันทึกข้อมูล
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="">ลบข้อมูล
-                                                    </label>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="">แก้ไขข้อมูล
-                                                    </label>
-                                                </div>
-                                            </div>
+
                                         </div>
-
-
                                     </div>
-                                    <button type="button" class="btn btn-danger" style="margin-left: 85%;" ng-click="backPage()">กลับ</button></a>
+                                    <button type="button" class="btn btn-danger" style="margin-left: 87%;" ng-click="backPage()">กลับ</button></a>
                                     <button type="button" class="btn btn-success">บันทึก</button>
-                                    <!-- /.col-lg-6 (nested) -->
                                 </div>
-                                <!-- /.row (nested) -->
+
+                                <!-- /.col-lg-6 (nested) -->
                             </div>
-                            <!-- /.panel-body -->
+                            <!-- /.row (nested) -->
                         </div>
-                        <!-- /.panel -->
+                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.col-lg-12 -->
+                    <!-- /.panel -->
                 </div>
-                <!-- /.row -->
+                <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
         </div>
+
         <!-- /#page-wrapper -->
 
 
@@ -630,6 +496,6 @@ and open the template in the editor.
 
         <script src="../js/angular.min.js"></script>
         <script src="../js/app/employee.js"></script>
-        <script src="../js/app/department.js"></script>
+
     </body>
 </html>

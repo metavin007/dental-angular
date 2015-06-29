@@ -1,7 +1,7 @@
 /* global angular */
 
-angular.module('employee', ['checklist-model']);
-angular.module('employee')
+angular.module('employee',[]);
+angular.module('employee',['checklist-model'])
         .controller('EmployeeController', function ($scope, $http) {
             $scope.keyword = null;
             $scope.employees = {};
@@ -14,7 +14,7 @@ angular.module('employee')
 
 
             $scope.error = {};
-            $scope.page = 1;
+            
             load();
             function load() {
                 $http.get('/employees').success(function (data) {
@@ -92,6 +92,8 @@ angular.module('employee')
                     $scope.employees = data;
                 });
             };
+            
+            $scope.page = 1;
             $scope.nextPage = function () {
                 $scope.page++;
             };
@@ -101,3 +103,5 @@ angular.module('employee')
 
 
         });
+        
+       
