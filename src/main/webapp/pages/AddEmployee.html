@@ -429,29 +429,25 @@ and open the template in the editor.
                                 <div class="row" ng-show="page === 1">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>อีเมล</label><span><h3 class="require">*</h3></span>
+                                            <label>อีเมล</label><span><h3 class="require">*</h3><span ng-show="error.violations.email.message" class="alert alert-danger">{{error.violations.email.message}}</span></span>
                                             <input class="form-control" ng-model="employee.email">
-                                            <p class="help-block"><span ng-show="error.violations.email.message" class="alert alert-danger">{{error.violations.email.message}}</span></p>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>รหัสบัตรประจำตัวประชาชน</label><span><h3 class="require">*</h3></span>
+                                            <label>รหัสบัตรประจำตัวประชาชน</label><span><h3 class="require">*</h3><span ng-show="error.violations.pid.message" class="alert alert-danger">{{error.violations.pid.message}}</span></span>
                                             <input class="form-control" ng-model="employee.pid">
-                                            <p class="help-block"><span ng-show="error.violations.pid.message" class="alert alert-danger">{{error.violations.pid.message}}</span></p>
                                         </div>
 
                                     </div>
                                     <div class="col-lg-6">
 
                                         <div class="form-group" >
-                                            <label>ชื่อ-สกุล ไทย</label><span><h3 class="require">*</h3></span>
+                                            <label>ชื่อ-สกุล ไทย</label><span><h3 class="require">*</h3><span ng-show="error.violations.nameth.message" class="alert alert-danger">{{error.violations.nameth.message}}</span></span>
                                             <input class="form-control" ng-model="employee.nameth">
-                                            <p class="help-block"><span ng-show="error.violations.nameTH.message" class="alert alert-danger">{{error.violations.nameth.message}}</span></p>
                                         </div>
                                         <div class="form-group">
-                                            <label>เบอร์โทรศัพท์มือถือ</label><span><h3 class="require">*</h3></span>
+                                            <label>เบอร์โทรศัพท์มือถือ</label><span><h3 class="require">*</h3><span ng-show="error.violations.mobile.message" class="alert alert-danger">{{error.violations.mobile.message}}</span></span>
                                             <input class="form-control" ng-model="employee.mobile">
-                                            <p class="help-block"><span ng-show="error.violations.mobile.message" class="alert alert-danger">{{error.violations.mobile.message}}</span></p>
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-success" ng-click="nextPage()" style="margin-left: 90%;">ต่อไป</button>
@@ -550,6 +546,7 @@ and open the template in the editor.
     <style>
         .alert.alert-danger{
             padding: 4px 8px 1px 8px;
+            margin-left: 10px;
         }
         .require{
             color: RED;

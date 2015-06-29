@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
- <head>
-
-        <head>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="employee">
+    <head>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +44,7 @@
 
     <body>
 
-        <div id="wrapper">
+        <div id="wrapper" >
 
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -309,7 +312,7 @@
                                     <li>
                                         <a href="TableDepartment.html">ตารางข้อมูลแผนก</a>
                                     </li>
-                  
+
                                 </ul>
                             </li>
                             <li>
@@ -405,9 +408,10 @@
                     </div>
                     <!-- /.sidebar-collapse -->
                 </div>
+
                 <!-- /.navbar-static-side -->
             </nav>
-            <div id="page-wrapper">
+            <div id="page-wrapper" ng-controller="EmployeeController" >
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">เพิ่มข้อมูลหมอ</h1>
@@ -422,187 +426,92 @@
                                 ตารางกรอกข้อมูลหมอ
                             </div>
                             <div class="panel-body">
-                                <div class="row">
+                                <div class="row" >
                                     <div class="col-lg-6">
-                                          <div class="form-group">
-                                                <label>เลขที่ใบอนุญาติ</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Example block-level help text here.</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>รหัสบัตรประจำตัวประชาชน</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Example block-level help text here.</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>ชื่อ-สกุล ไทย</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Example block-level help text here.</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>ชื่อ-สกุล อังกฤษ</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Example block-level help text here.</p>
-                                            </div>
-                                            <div>
-                                                <table>
-                                                    <thead>
-                                                        <tr>
-                                                            <td>
-                                                                <label>วัน</label>   
-                                                            </td>
-                                                            <td>
-                                                                <label style="margin-left: 10px;">เดือน</label>   
-                                                            </td>
-                                                            <td>
-                                                                <label style="margin-left: 22px;">ปี</label>   
-                                                            </td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <select class="form-control">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                    <option>5</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select class="form-control" style="margin-left: 10px">
-                                                                    <option>มกราคม</option>
-                                                                    <option>สิงหาคม</option>
-                                                                    <option>กันยายน</option>
-                                                                    <option>ตุลาคม</option>
-                                                                    <option>ธันวาคม</option>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <select class="form-control" style="margin-left: 20px">
-                                                                    <option>1991</option>
-                                                                    <option>1992</option>
-                                                                    <option>1993</option>
-                                                                    <option>1994</option>
-                                                                    <option>1995</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <br>
+                                        <div class="form-group">
+                                            <label>เลขที่ใบอนุญาติ</label><span><h3 class="require">*</h3><span ng-show="" class="alert alert-danger">{{}}</span></span>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>อีเมล</label><span><h3 class="require">*</h3><span ng-show="error.violations.email.message" class="alert alert-danger">{{error.violations.email.message}}</span></span>
+                                            <input class="form-control" ng-model="employee.email">
+                                        </div>
 
-
-                                            <div class="form-group">
-                                                <label>เบอร์โทรศัพท์</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Example block-level help text here.</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>เบอร์โทรสัพมือถือ</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Example block-level help text here.</p>
-                                            </div>
-
+                                        <div class="form-group">
+                                            <label>รหัสบัตรประจำตัวประชาชน</label><span><h3 class="require">*</h3><span ng-show="error.violations.pid.message" class="alert alert-danger">{{error.violations.pid.message}}</span></span>
+                                            <input class="form-control" ng-model="employee.pid">
+                                        </div>
 
                                     </div>
-                                    <!-- /.col-lg-6 (nested) -->
                                     <div class="col-lg-6">
-                                          <div class="form-group">
-                                                <label>ประเภทใบอนุญาติ</label>
-                                                <input class="form-control">
-                                                <p class="help-block">Example block-level help text here.</p>
-                                            </div>
                                         <div class="form-group">
-                                            <label>แนปรูปถ่าย</label>
-                                            <input type="file">
+                                            <label>ประเภทใบอนุญาติ</label><span><h3 class="require">*</h3><span ng-show="" class="alert alert-danger">{{}}</span></span>
+                                            <input class="form-control" ng-model="">
                                         </div>
-
-                                        <div class="form-group">
-                                            <label>เพศ</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">ชาย
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">หญิง
-                                            </label>
-
+                                        <div class="form-group" >
+                                            <label>ชื่อ-สกุล ไทย</label><span><h3 class="require">*</h3><span ng-show="error.violations.nameth.message" class="alert alert-danger">{{error.violations.nameth.message}}</span></span>
+                                            <input class="form-control" ng-model="employee.nameth">
                                         </div>
                                         <div class="form-group">
-                                            <label>กรุ๊ปเลือด</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline2" id="optionsRadiosInline1" value="option1" checked="">A
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline2" id="optionsRadiosInline2" value="option2">B
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline2" id="optionsRadiosInline2" value="option2">AB
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline2" id="optionsRadiosInline2" value="option2">O
-                                            </label>
-
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label>ที่อยู่ปัจจุบัน</label>
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>อีเมลล์</label>
-                                            <input class="form-control">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div>
-                                            <label>สถานะ</label>
-                                            <select class="form-control">
-                                                <option>ทำงาน</option>
-                                                <option>ไม่ทำงาน</option>
-                                                
-                                            </select>
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label>หมายเหตุ</label>
-                                            <textarea class="form-control" rows="3"></textarea>
+                                            <label>เบอร์โทรศัพท์มือถือ</label><span><h3 class="require">*</h3><span ng-show="error.violations.mobile.message" class="alert alert-danger">{{error.violations.mobile.message}}</span></span>
+                                            <input class="form-control" ng-model="employee.mobile">
                                         </div>
                                     </div>
-                                    <a href="AddEmployeeTwo.html"> <button type="button" class="btn btn-success" style="margin-left: 90%;">ต่อไป</button> </a>
+
+
                                     <!-- /.col-lg-6 (nested) -->
                                 </div>
-                                <!-- /.row (nested) -->
+
+
+                                <button type="button" class="btn btn-success" ng-click="save()" style="margin-left: 90%;">บันทึก</button> 
+
+
                             </div>
-                            <!-- /.panel-body -->
+
+                            <!-- /.col-lg-6 (nested) -->
                         </div>
-                        <!-- /.panel -->
+                        <!-- /.row (nested) -->
                     </div>
-                    <!-- /.col-lg-12 -->
+                    <!-- /.panel-body -->
                 </div>
-                <!-- /.row -->
+                <!-- /.panel -->
             </div>
-            <!-- /#page-wrapper -->
+            <!-- /.col-lg-12 -->
         </div>
+        <!-- /.row -->
+    </div>
+
+    <!-- /#page-wrapper -->
 
 
+    <style>
+        .alert.alert-danger{
+            padding: 4px 8px 1px 8px;
+            margin-left: 10px;
+        }
+        .require{
+            color: RED;
+            display: inline;
+            left: 5px;
+            top: 10px;
+            position: relative;
+        }
+    </style>
 
 
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-        
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
-
-    </body>
-
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/app/employee.js"></script>
+    <script src="../js/checklist-model.js"></script>
+</body>
 </html>
