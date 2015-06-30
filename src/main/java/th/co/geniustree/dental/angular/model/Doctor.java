@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import org.hibernate.annotations.CollectionId;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -20,15 +21,30 @@ import org.hibernate.annotations.CollectionId;
  */
 @Entity
 public class Doctor extends Employee implements Serializable{
-    @Column(name = "XXX",nullable = false)
-    private String xxx;
+   
+    @NotBlank(message = "Please Input cerNo.")
+    private String cer;
+    
+    @NotBlank(message = "Please Input cerType.")
+    private String cerType;
 
-    public String getXxx() {
-        return xxx;
+    public String getCerNo() {
+        return cer;
     }
 
-    public void setXxx(String xxx) {
-        this.xxx = xxx;
+    public void setCerNo(String cerNo) {
+        this.cer = cerNo;
     }
+
+    
+    public String getCerType() {
+        return cerType;
+    }
+
+    public void setCerType(String cerType) {
+        this.cerType = cerType;
+    }
+    
+    
     
 }
