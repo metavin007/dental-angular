@@ -1,12 +1,21 @@
 angular.module('doctor',[]);
 angular.module('doctor').controller('doctorController',function ($scope,$http){
+    $scope.doctors = {};
     $scope.doctor = {};
     $scope.error = {};
-    $scope.saveDoctor = function (){
-        $http.post('/savedoctor',$scope.doctor).success(function (data){
+    
+   loaddoctor();
+            function loaddoctor() {
+                $http.get('/showdoctors').success(function (data) {
+                    $scope.doctors = data; 
+                }).error(function (data, status, header, config) {
+                });
+            }
             
-        }).error(function (data){
-            $scope.error = data;
-        });
-    };
+             $scope.savedoctor = function () {
+                $http.post('/savedoctors', $scope.doctor).success(function (data) {                  
+                }).error(function (data, status, header, config) {
+                    $scope.error = data;                   
+                });
+            };
 });
