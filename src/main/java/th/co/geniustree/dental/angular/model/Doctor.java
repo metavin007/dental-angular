@@ -23,28 +23,28 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Doctor extends Employee implements Serializable{
    
     @NotBlank(message = "Please Input cerNo.")
-    private String cer;
+    private String cerno;
     
     @NotBlank(message = "Please Input cerType.")
-    private String cerType;
+    private String certype;
 
-    public String getCerNo() {
-        return cer;
+    public String getCerno() {
+        return cerno;
     }
 
-    public void setCerNo(String cerNo) {
-        this.cer = cerNo;
+    public void setCerno(String cerno) {
+        this.cerno = cerno;
     }
 
-    
-    public String getCerType() {
-        return cerType;
+    public String getCertype() {
+        return certype;
     }
 
-    public void setCerType(String cerType) {
-        this.cerType = cerType;
+    public void setCertype(String certype) {
+        this.certype = certype;
     }
-    
+
+
     
     
 }

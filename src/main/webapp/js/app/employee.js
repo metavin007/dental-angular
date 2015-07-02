@@ -71,10 +71,12 @@ angular.module('employee',['checklist-model'])
 
             $scope.save = function () {
                 $http.post('/employeessave', $scope.employee).success(function (data) {
+                     alert('saveข้อมูลเรียบร้อย');
                     load();
                     $scope.error = {};
                 }).error(function (data, status, header, config) {
                     $scope.error = data;
+                     alert('ท่านกรอกข้อมูลไม่สมบูรณ์');
                 });
             };
             $scope.delete = function (emp) {

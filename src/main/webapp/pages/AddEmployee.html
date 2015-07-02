@@ -521,56 +521,89 @@ and open the template in the editor.
 
 
                                     </div>
-                                    <button type="button" class="btn btn-danger" style="margin-left: 87%;" ng-click="backPage()">กลับ</button></a>
+                                    <button type="button" class="btn btn-danger" style="margin-left: 80%;" ng-click="backPage()">กลับ</button></a>
+                                    <button type="button" class="btn btn-success" ng-click="nextPage()">ตรวจความเรีบร้อย</button> 
+                                </div>
+
+                                <div class="panel-body" ng-show="page === 3" >
+                                    <div class="row" >
+                                        <div class="col-lg-6">
+
+                                            <p>อีเมลล์:{{employee.email}}</p> 
+                                            <p>เลขประจำตัวประชาชน:{{employee.pid}}</p>
+                                            <p>ชื่อไทย:{{employee.nameth}}</p>
+                                            <p>โทรศัพท์:{{employee.mobile}}</p>
+
+
+                                        </div>
+                                        <!-- /.col-lg-6 (nested) -->
+                                        <div class="col-lg-6">
+                                            
+                                            <p>ชื่อผู้ติดต่อเพิ่มเติม:{{employee.contactpersion.name}}</p> 
+                                            <p>เกี่ยวข้องเป็น:{{employee.contactpersion.relation}}</p> 
+                                            <p>โทรศัพท์:{{employee.contactpersion.telephonenumber}}</p> 
+                                            
+                                            <p>แผนก:{{employee.department}}</p> 
+                                            
+                                            <p>เลขบัญชีธนาคาร:{{employee.bankaccount.addcountid}}</p>
+                                            <p>ชื่อธนาคาร:{{employee.bankaccount.bankname}}</p>
+                                            <p>ชื่อบัญชี:{{employee.bankaccount.addcountname}}</p>
+                                            <p>ประเภทบัญชี้:{{employee.bankaccount.addcounttype}}</p>
+                                            
+                                            <p>สิทธิการใช้งาน:{{employee.authorities}}</p>
+                                        </div>
+
+
+                                    </div>
+                                    <button type="button" class="btn btn-danger" style="margin-left: 80%;" ng-click="backPage()">กลับไปแก้ไข</button></a>
                                     <button type="button" class="btn btn-success" ng-click="save()">บันทึก</button> 
                                 </div>
 
+
+                                <!-- /.col-lg-6 (nested) -->
                             </div>
-
-                            <!-- /.col-lg-6 (nested) -->
+                            <!-- /.row (nested) -->
                         </div>
-                        <!-- /.row (nested) -->
+                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel-body -->
+                    <!-- /.panel -->
                 </div>
-                <!-- /.panel -->
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.col-lg-12 -->
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
-    </div>
 
-    <!-- /#page-wrapper -->
+        <!-- /#page-wrapper -->
 
 
-    <style>
-        .alert.alert-danger{
-            padding: 4px 8px 1px 8px;
-            margin-left: 10px;
-        }
-        .require{
-            color: RED;
-            display: inline;
-            left: 5px;
-            top: 10px;
-            position: relative;
-        }
-    </style>
+        <style>
+            .alert.alert-danger{
+                padding: 4px 8px 1px 8px;
+                margin-left: 10px;
+            }
+            .require{
+                color: RED;
+                display: inline;
+                left: 5px;
+                top: 10px;
+                position: relative;
+            }
+        </style>
 
 
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
 
-    <script src="../js/angular.min.js"></script>
-    <script src="../js/app/employee.js"></script>
-    <script src="../js/checklist-model.js"></script>
-</body>
+        <script src="../js/angular.min.js"></script>
+        <script src="../js/app/employee.js"></script>
+        <script src="../js/checklist-model.js"></script>
+    </body>
 </html>
