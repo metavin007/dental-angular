@@ -7,15 +7,17 @@ package th.co.geniustree.dental.angular.model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Email;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -28,13 +30,31 @@ public class Customer implements Serializable{
     @SequenceGenerator(name = "CUSTOMER",sequenceName = "CUSTOMER_SEQ",allocationSize = 1)
     @GeneratedValue(generator = "CUSTOMER",strategy = GenerationType.SEQUENCE)
     private BigInteger id;
-    @NotBlank(message = "name is not empty")
+   
+    @NotBlank(message = "HN is not empty")
+    private String hn;
+    
+    @NotBlank(message = "Person ID is not empty")
+    private String pid;
+    
+    @NotBlank(message = "Name is not empty")
     private String name;
-    @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
-    @NotBlank(message = "email is not empty")
-    private String email;
-    @NotBlank(message = "mobile is not empty")
+    
+    @Temporal(TemporalType.DATE)
+    private Date birthday;
+    
+    private String sex;
+    private String blood;
+    private String nation;
+    private String race;
+    private String address;
+    private String tel;
     private String mobile;
+    private String job;
+    private String email;
+    
+    @ManyToMany
+    private List<MedicalHistory> medicalhistory;
 
     public BigInteger getId() {
         return id;
@@ -42,6 +62,22 @@ public class Customer implements Serializable{
 
     public void setId(BigInteger id) {
         this.id = id;
+    }
+
+    public String getHn() {
+        return hn;
+    }
+
+    public void setHn(String hn) {
+        this.hn = hn;
+    }
+
+    public String getPid() {
+        return pid;
+    }
+
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 
     public String getName() {
@@ -52,12 +88,60 @@ public class Customer implements Serializable{
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getBlood() {
+        return blood;
+    }
+
+    public void setBlood(String blood) {
+        this.blood = blood;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
+    public String getRace() {
+        return race;
+    }
+
+    public void setRace(String race) {
+        this.race = race;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public String getMobile() {
@@ -68,10 +152,36 @@ public class Customer implements Serializable{
         this.mobile = mobile;
     }
 
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<MedicalHistory> getMedicalhistory() {
+        return medicalhistory;
+    }
+
+    public void setMedicalhistory(List<MedicalHistory> medicalhistory) {
+        this.medicalhistory = medicalhistory;
+    }
+
+    
+    
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 59 * hash + Objects.hashCode(this.id);
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -90,5 +200,4 @@ public class Customer implements Serializable{
         return true;
     }
     
-    
-}
+ }

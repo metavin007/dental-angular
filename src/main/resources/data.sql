@@ -26,4 +26,13 @@ values(user_SEQ.nextVal,'2921718','bbbb@aaa','22222','jasin007','jasin001','M','
 
 
 
+INSERT INTO Medical_History(disease) values('Nomal');
+INSERT INTO Medical_History(disease) values('High Blood Pressure');
+INSERT INTO Medical_History(disease) values('Anemia');
+INSERT INTO Medical_History(disease) values('Diabetes');
+INSERT INTO Medical_History(disease) values('Dissolves blood clots');
+INSERT INTO Medical_History(disease) values('Heart disease');
+INSERT INTO Medical_History(disease) values('Hepatitis');
+INSERT INTO Medical_History(disease) values('Losers drug history');
+
 
