@@ -40,7 +40,11 @@ and open the template in the editor.
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-
+        <link rel="stylesheet" href="../carlendar/jquery-ui.min.css">
+        <link rel="stylesheet" href="../carlendar/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="../carlendar/jquery-ui.theme.min.css">
+        <script src="../carlendar/external/jquery/jquery.js"></script>
+        <script src="../carlendar/jquery-ui.min.js"></script>
 
     </head>
 
@@ -509,7 +513,7 @@ and open the template in the editor.
                                         <br>
                                         <div class="col-md-3" ng-repeat="med in medicalhistorys.content">
                                             <input type="checkbox" checklist-model="customer.medicalhistory"
-                                                          checklist-value="med"> {{med.disease}}
+                                                   checklist-value="med"> {{med.disease}}
                                         </div>
                                         <br>
                                         <br>
@@ -536,7 +540,16 @@ and open the template in the editor.
 
 
         <!-- /#page-wrapper -->
+        <script>
 
+                    $("#birthday.form-control").datepicker({
+                        dateFormat: 'yy-mm-dd',
+                        yearRange: "-100:+100",
+                        changeYear: true
+                    }
+                    );
+
+        </script>
 
         <style>
             .alert.alert-danger{
@@ -566,5 +579,6 @@ and open the template in the editor.
         <script src="../js/angular.min.js"></script>
         <script src="../js/app/customer.js"></script>
         <script src="../js/checklist-model.js"></script>
+
     </body>
 </html>
