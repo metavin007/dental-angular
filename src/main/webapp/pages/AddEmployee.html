@@ -390,20 +390,7 @@ and open the template in the editor.
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#"><i class="fa fa-edit fa-fw"></i>หน้าตัวอย่างการทำเว๊ป<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="ExamInsertupdatedelete1.html">การทำ insert update delete ภาค 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="ExamInsertupdatedelete2.html">การทำ insert update delete ภาค 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="ExamFrom.html">แบบFROM ทำเว๊ป</a>
-                                    </li>
-                                </ul>
-                            </li>
+                          
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
@@ -437,6 +424,39 @@ and open the template in the editor.
                                             <label>รหัสบัตรประจำตัวประชาชน</label><span><h3 class="require">*</h3><span ng-show="error.violations.pid.message" class="alert alert-danger">{{error.violations.pid.message}}</span></span>
                                             <input class="form-control" ng-model="employee.pid">
                                         </div>
+                                        <div class="form-group">
+                                            <label>ชื่อภาษาอังกฤษ</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>วันเกิด</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>เพศ</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>กรุ๊ปเลือด</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>สถานะทางการทหาร</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>สถานะสมรส</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>สัญชาติ</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>เชื้อชาติ</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                       
 
                                     </div>
                                     <div class="col-lg-6">
@@ -448,6 +468,39 @@ and open the template in the editor.
                                         <div class="form-group">
                                             <label>เบอร์โทรศัพท์มือถือ</label><span><h3 class="require">*</h3><span ng-show="error.violations.mobile.message" class="alert alert-danger">{{error.violations.mobile.message}}</span></span>
                                             <input class="form-control" ng-model="employee.mobile">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>ที่อยู่ตามบัตรระชาชน</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ที่อยู่ปัจจุบัน</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>เบอร์โทรศัพท์บ้าน</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>วันเริ่มทำงาน</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>วันสิ้นสุดงาน</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>สถานะการทำงาน</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>พาสเวิร์ค</label>
+                                            <input class="form-control" ng-model="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ลำดับที่</label>
+                                            <input class="form-control" ng-model="">
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-success" ng-click="nextPage()" style="margin-left: 90%;">ต่อไป</button>

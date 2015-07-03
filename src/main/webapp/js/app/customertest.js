@@ -1,5 +1,5 @@
-angular.module('customer', []);
-angular.module('customer')
+angular.module('customertest', []);
+angular.module('customertest')
         .controller('CustomerController', function ($scope, $http) {
             $scope.customers = {};
             $scope.customer = {};
