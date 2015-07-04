@@ -19,6 +19,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.validator.constraints.NotBlank;
+import th.co.geniustree.dental.angular.validator.PidUnique;
 
 /**
  *
@@ -34,6 +35,7 @@ public class Customer implements Serializable{
     @NotBlank(message = "HN is not empty")
     private String hn;
     
+    @PidUnique
     @NotBlank(message = "Person ID is not empty")
     private String pid;
     
