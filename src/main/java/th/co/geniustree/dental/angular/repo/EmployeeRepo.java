@@ -21,5 +21,7 @@ public interface EmployeeRepo extends JpaRepository<Employee, Integer>,JpaSpecif
     public Employee findByEmail(String email);
     @Query("select u from Employee u where u.nameth like %?1% or u.email like %?2%")
     public Page<Employee> findByNameTHOrEmail(String nameth, String email, Pageable pageable);
+
+    public Employee findByEmailIgnoreCase(String value);
     
 }

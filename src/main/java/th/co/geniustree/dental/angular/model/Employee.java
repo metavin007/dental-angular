@@ -26,10 +26,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import th.co.geniustree.dental.angular.validator.EmailUnique;
 
 /**
  *
@@ -48,7 +50,7 @@ public class Employee implements Serializable, UserDetails {
 //    @NotBlank(message = "please input password")
 //    @Column(name = "password" , nullable = false)
     private String password;
-
+    @EmailUnique
     @Column(name = "EMAIL", nullable = false, unique = true)
     @NotBlank(message = "please input email")
     @Email(message = "format Incompatible (Ex. xxx@xxx.com)")
@@ -57,7 +59,7 @@ public class Employee implements Serializable, UserDetails {
     @Column(name = "PID", nullable = false, unique = true)
     @NotBlank(message = "please input password")
     private String pid;
-
+@Size(max = 100)
     @Column(name = "NAMETH", nullable = false)
     @NotBlank(message = "please input name")
     private String nameth;
