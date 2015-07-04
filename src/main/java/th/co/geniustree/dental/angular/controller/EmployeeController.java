@@ -39,7 +39,7 @@ public class EmployeeController {
 
     @RequestMapping(value = "/employeesdelete", method = RequestMethod.POST)
     public void deleteUser(@RequestBody Employee user) {
-        employeeRepo.delete(user);
+        employeeRepo.delete(user.getId());
     }
 
     @RequestMapping(value = "/employees/search", method = RequestMethod.POST)

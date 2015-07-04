@@ -7,12 +7,10 @@ package th.co.geniustree.dental.angular.repo;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import th.co.geniustree.dental.angular.model.Doctor;
 
-/**
- *
- * @author Best
- */
-public interface DoctorRepo extends JpaRepository<Doctor,Integer>{
+
+public interface DoctorRepo extends JpaRepository<Doctor,Integer>,JpaSpecificationExecutor<Doctor>{
     
 }
