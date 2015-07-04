@@ -5,7 +5,6 @@
  */
 package th.co.geniustree.dental.angular.service;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,6 +24,9 @@ public class EmployeeSearchService {
     private EmployeeRepo employeeRepo;
     
     public Page<Employee> search(String keyword,Pageable pageable){
+
+    public Page<Employee> search(String keyword, Pageable pageable){
+
         Specifications<Employee> specification = Specifications.where(EmployeeSpec.emailLike("%"+keyword+"%"))
                 .or(EmployeeSpec.nameLike("%"+keyword+"%"));
         return  employeeRepo.findAll(specification,pageable);

@@ -15,5 +15,7 @@ import th.co.geniustree.dental.angular.model.Customer;
  * @author pramoth
  */
 public interface CustomerRepo extends JpaRepository<Customer, BigInteger>{
+
+    public Customer findByPidIgnoreCase(String value);
     
 }

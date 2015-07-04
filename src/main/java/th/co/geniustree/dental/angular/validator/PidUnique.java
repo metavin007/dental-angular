@@ -14,16 +14,15 @@ import javax.validation.Payload;
 
 /**
  *
- * @author pramoth
+ * @author kekhuay
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Constraint(validatedBy = EmailUniqueValidator.class)
-public @interface EmailUnique {
-
-    String message() default "{th.co.geniustree.dental.angular.validator.EmailUnique.message}";
-
+@Constraint(validatedBy = PidUniqueValidator.class)
+public @interface PidUnique {
+    String message() default "{th.co.geniustree.dental.angular.validator.PidUnique.message}";
+    
     Class<?>[] groups() default {};
-
+    
     Class<? extends Payload>[] payload() default {};
 }
