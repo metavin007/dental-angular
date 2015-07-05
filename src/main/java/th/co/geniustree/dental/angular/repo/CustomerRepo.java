@@ -9,7 +9,7 @@ import java.math.BigInteger;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import th.co.geniustree.dental.angular.model.Customer;
-import th.co.geniustree.dental.angular.model.Employee;
+
 
 
 /**

@@ -64,7 +64,8 @@ public class DoctorSearchServiceSpecIT {
     @Test
     public void findEmailDoctorOneRow() {
         doctorRepo.saveAndFlush(doctor0);
-        Page<Doctor> search = doctorSearchService.search("e", new PageRequest(0, 10));
+   
+        Page<Doctor> search = doctorSearchService.search("ee", new PageRequest(0, 10));
         Assertions.assertThat(search.getTotalElements()).isEqualTo(1);
     }
 }

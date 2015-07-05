@@ -18,36 +18,40 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import th.co.geniustree.dental.angular.App;
-import th.co.geniustree.dental.angular.model.Customer;
-import th.co.geniustree.dental.angular.repo.CustomerRepo;
+import th.co.geniustree.dental.angular.model.Doctor;
+import th.co.geniustree.dental.angular.repo.DoctorRepo;
 
 /**
  *
- * @author kekhuay
+ * @author Jasin007
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = App.class)
 @Transactional(propagation = Propagation.REQUIRED)
-public class PidUniqueValidatorIT {
+public class CerfinicationDoctorValidator {
 
     @Autowired
-    private CustomerRepo customerRepo;
+    DoctorRepo doctorRepo;
+    
     @Autowired
     private Validator validator;
-    private Customer bom;
+    private Doctor doctor;
 
     @Before
-    public void setUp() {
-        bom = new Customer();
-        bom.setHn("bbbbb");
-        bom.setPid("12345");
-        bom.setName("bom");
-        bom = customerRepo.save(bom);
+    public void setrow() {
+        doctor = new Doctor();
+        doctor.setCerno("1234");
+        doctor.setCertype("ออมทรัพย์");
+        doctor.setEmail("xxx@xxx.com");
+        doctor.setNameth("dortorนะครับ");
+        doctor.setPid("1730200213549");
+        doctor.setMobile("0964747468");
+        doctorRepo.save(doctor);
     }
-
+        
     @Test
-    public void ifPidIsAlreadyExistThenError() {
-        Set<ConstraintViolation<Customer>> validateProperty = validator.validateProperty(bom, "pid");
-        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("dup ซ้ำ");
+    public void ifCerfinicationDoctorIsAlreadyExistThenError() {
+        Set<ConstraintViolation<Doctor>> validateProperty = validator.validateProperty(doctor, "cerno");
+        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("cerfinicationซ้ำ");
     }
 }

@@ -59,7 +59,7 @@ public class CustomerSearchServiceSpecIT {
         customerRepo.saveAndFlush(customer);
         customerRepo.saveAndFlush(customer2);
         customerRepo.saveAndFlush(customer3);
-        Page<Customer> search = customerService.search("i", new PageRequest(0, 10));
+        Page<Customer> search = customerService.search("B", new PageRequest(0, 10));
         Assertions.assertThat(search.getTotalElements()).isEqualTo(2);
     }
     
