@@ -19,6 +19,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.validator.constraints.NotBlank;
+import th.co.geniustree.dental.angular.validator.MobileUnique;
 import th.co.geniustree.dental.angular.validator.PidUnique;
 
 /**
@@ -51,6 +52,7 @@ public class Customer implements Serializable{
     private String race;
     private String address;
     private String tel;
+    @MobileUnique
     private String mobile;
     private String job;
     private String email;

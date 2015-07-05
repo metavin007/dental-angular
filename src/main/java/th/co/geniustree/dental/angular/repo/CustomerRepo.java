@@ -7,15 +7,19 @@ package th.co.geniustree.dental.angular.repo;
 
 import java.math.BigInteger;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import th.co.geniustree.dental.angular.model.Customer;
+import th.co.geniustree.dental.angular.model.Employee;
 
 
 /**
  *
  * @author pramoth
  */
-public interface CustomerRepo extends JpaRepository<Customer, BigInteger>{
+public interface CustomerRepo extends JpaRepository<Customer, BigInteger>,JpaSpecificationExecutor<Customer>{
 
     public Customer findByPidIgnoreCase(String value);
+    
+    public Customer findByMobileIgnoreCase(String value);
     
 }
