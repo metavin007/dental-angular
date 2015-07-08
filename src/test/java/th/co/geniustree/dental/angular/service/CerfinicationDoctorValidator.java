@@ -52,6 +52,6 @@ public class CerfinicationDoctorValidator {
     @Test
     public void ifCerfinicationDoctorIsAlreadyExistThenError() {
         Set<ConstraintViolation<Doctor>> validateProperty = validator.validateProperty(doctor, "cerno");
-        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("cerfinicationซ้ำ");
+        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("dupcerfinicationdoctor");
     }
 }

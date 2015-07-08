@@ -16,6 +16,7 @@ import th.co.geniustree.dental.angular.repo.CustomerRepo;
  *
  * @author kekhuay
  */
+
 public class PidUniqueValidator implements ConstraintValidator<PidUnique, String> {
 
     @Autowired

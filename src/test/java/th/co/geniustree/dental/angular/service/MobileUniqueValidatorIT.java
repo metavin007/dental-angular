@@ -50,7 +50,7 @@ public class MobileUniqueValidatorIT {
     @Test
     public void ifMobileuniqueMustReturnOneNaja(){
          Set<ConstraintViolation<Customer>> validateProperty = validator.validateProperty(customer, "mobile");
-        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("dup phone number");
+        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("dup phone number ");
     }
     
 }
