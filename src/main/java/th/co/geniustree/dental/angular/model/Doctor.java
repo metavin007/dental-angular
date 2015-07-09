@@ -14,6 +14,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import org.hibernate.annotations.CollectionId;
 import org.hibernate.validator.constraints.NotBlank;
+import th.co.geniustree.dental.angular.validator.CerficationDoctorUnique;
 
 /**
  *
@@ -21,7 +22,7 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 @Entity
 public class Doctor extends Employee implements Serializable{
-   
+    @CerficationDoctorUnique
     @NotBlank(message = "Please Input cerNo.")
     private String cerno;
     
