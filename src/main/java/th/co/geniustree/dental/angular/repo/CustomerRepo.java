@@ -21,5 +21,9 @@ public interface CustomerRepo extends JpaRepository<Customer, BigInteger>,JpaSpe
     public Customer findByPidIgnoreCase(String value);
     
     public Customer findByMobileIgnoreCase(String value);
+
+    public Customer findByNamethIgnoreCase(String value);
+
+   
     
 }
