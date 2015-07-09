@@ -20,6 +20,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.validator.constraints.NotBlank;
 import th.co.geniustree.dental.angular.validator.MobileUnique;
+import th.co.geniustree.dental.angular.validator.NameUnique;
 import th.co.geniustree.dental.angular.validator.PidUnique;
 
 /**
@@ -40,6 +41,7 @@ public class Customer implements Serializable{
     @NotBlank(message = "Person ID is not empty")
     private String pid;
     
+    @NameUnique
     @NotBlank(message = "Name is not empty")
     private String name;
     

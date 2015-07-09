@@ -18,9 +18,9 @@ import javax.validation.Payload;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-@Constraint(validatedBy = NamethUniqueValidator.class)
-public @interface NamethUnique {
-    String mesage() default "{th.co.geniustree.dental.angular.validator.NamethUnique.message}";
+@Constraint(validatedBy = NameUniqueValidator.class)
+public @interface NameUnique {
+    String message() default "{th.co.geniustree.dental.angular.validator.NameUnique.message}";
     
     Class<?>[] groups() default {};
     

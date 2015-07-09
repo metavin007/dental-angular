@@ -5,13 +5,11 @@
  */
 package th.co.geniustree.dental.angular.service;
 
-import java.math.BigInteger;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import org.assertj.core.api.Assertions;
-import org.assertj.core.api.StrictAssertions;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +29,7 @@ import th.co.geniustree.dental.angular.repo.CustomerRepo;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = App.class)
 @Transactional(propagation = Propagation.REQUIRED)
-public class NamethUniqueValidatorIT {
+public class NameUniqueValidatorIT {
     @Autowired
     private CustomerRepo customerRepo;
     
@@ -49,8 +47,8 @@ public class NamethUniqueValidatorIT {
         oom = customerRepo.save(oom);
     }
     @Test
-    public void ifAlreadyNamethThenError(){
+    public void ifAlreadyNameThenError(){
         Set<ConstraintViolation<Customer>> validateProperty = validator.validateProperty(oom, "name");
-        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("dup Nameth ");
+        Assertions.assertThat(validateProperty).extracting(c -> c.getMessage()).contains("dup Name");
     }
 }
